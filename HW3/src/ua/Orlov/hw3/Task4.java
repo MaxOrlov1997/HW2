@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Task4 {
     public static void main(String[] args) {
-        int a = (int) (Math.random()*10);
+        int a = (int) (Math.random() * 10);
 
         System.out.println(figure(a) + " Угадал");
 
@@ -13,7 +13,7 @@ public class Task4 {
     public static int figure(int a) {
         Scanner scan = new Scanner(System.in);
         int b = scan.nextInt();
-        while (a>b || a<b || a==b){
+        while (a > b || a < b || a == b) {
             if (a == b) {
 
                 return a;
