@@ -1,6 +1,7 @@
 package ua.Orlov.hw3;
 
 import java.util.Scanner;
+
 /*2. Удалить из строки пробелы и определить, является ли она перевертышем (палиндромом)*/
 public class Task2 {
 
