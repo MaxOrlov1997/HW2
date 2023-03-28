@@ -1,4 +1,4 @@
-package ua.Orlov.hw3;
+package ua.orlov.hw3;
 
 import java.util.Scanner;
 
@@ -9,17 +9,18 @@ public class Task2 {
         Scanner scan = new Scanner(System.in);
         String text = scan.nextLine();
         text = text.replaceAll("\\s", "");
-        System.out.println(line(text));
+        System.out.println(isPalindrome(text));
     }
 
-    public static String line(String text) {
+    public static String isPalindrome(String text) {
 
         String word = "";
         for (int i = text.length(); i > 0; --i) {
 
-            word = word + text.charAt(i - 1);
+            word += text.charAt(i - 1);
         }
-        System.out.println(text.equals(word) ? "Является переветышем" : "Не является перевертышем");
+        boolean isPalindrome= text.equals(word);
+        System.out.println(isPalindrome);
 
         return word;
 

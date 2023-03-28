@@ -1,4 +1,4 @@
-package ua.Orlov.hw3;
+package ua.orlov.hw3;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Task4 {
     public static int figure(int a) {
         Scanner scan = new Scanner(System.in);
         int b = scan.nextInt();
-        while (a > b || a < b || a == b) {
+        while (true) {
             if (a == b) {
 
                 return a;
@@ -26,7 +26,6 @@ public class Task4 {
                 return scan.nextInt();
             }
         }
-        return b;
     }
 }
 
