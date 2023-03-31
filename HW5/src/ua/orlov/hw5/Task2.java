@@ -38,7 +38,7 @@ public class Task2 {
             isChanget = false;
             for (int j = 0; j < sorted.length; j++) {
                 for (int i = 0; i < sorted[j].length - 1 - nextNum; i++) {
-                    if (sorted[j][i] > sorted[j][i + 1]) {
+                    if (sorted[j][i] < sorted[j][i + 1]) {
                         dop = sorted[j][i];
                         sorted[j][i] = sorted[j][i + 1];
                         sorted[j][i + 1] = dop;
