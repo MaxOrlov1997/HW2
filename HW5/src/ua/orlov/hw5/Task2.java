@@ -1,16 +1,14 @@
 package ua.orlov.hw5;
-
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
-
 public class Task2 {
     public static void main(String[] args) {
-        int [][] array=new int [4][3];
-        boolean isChanget=false;
+        int[][] array = new int[4][3];
+        boolean isChanget = false;
         printArray(array);
         System.out.println(Arrays.deepToString(array));
-        int [][] sorted=arrayCopy(array);
-        sortArray(sorted,isChanget);
+        int[][] sorted = arrayCopy(array);
+        sortArray(sorted, isChanget);
         System.out.println(Arrays.deepToString(sorted));
         System.out.println(sortArray(sorted, isChanget));
     }
@@ -25,14 +23,14 @@ public class Task2 {
                 }
             } else {
                 for (int i = 0; i < 3; i++) {
-                    arrays[j][i]= ThreadLocalRandom.current().nextInt(0, 10);
+                    arrays[j][i] = ThreadLocalRandom.current().nextInt(0, 10);
                 }
             }
         }
         return arrays;
     }
-    public static boolean sortArray(int[][]sorted, boolean isChanget){
-        int nextNum=0;
+    public static boolean sortArray(int[][] sorted, boolean isChanget) {
+        int nextNum = 0;
         int dop;
         do {
             isChanget = false;
@@ -44,11 +42,12 @@ public class Task2 {
                         sorted[j][i + 1] = dop;
                         isChanget = true;
                     }
-                }}
-                nextNum++;
+                }
             }
-            while (isChanget) ;
-            return isChanget;
+            nextNum++;
         }
+        while (isChanget);
+        return isChanget;
     }
+}
 

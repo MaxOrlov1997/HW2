@@ -6,15 +6,14 @@ public class Practice2 {
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(-180, 150);
         }
-        int sumMen=0;
-        int sumWomen=0;
-         sumMen=sumMenHeight(array,sumMen);
-         sumWomen=sumWomenHeight(array,sumWomen);
+        int sumMen = 0;
+        int sumWomen = 0;
+        sumMen = sumMenHeight(array, sumMen);
+        sumWomen = sumWomenHeight(array, sumWomen);
 
         System.out.println(sumMenHeight(array, sumMen));
-        System.out.println(sumWomenHeight(array,sumWomen));
+        System.out.println(sumWomenHeight(array, sumWomen));
     }
-
     public static int sumMenHeight(int[] array, int sumMen) {
         int heightMen = 0;
         int howMen = 0;
@@ -24,10 +23,10 @@ public class Practice2 {
                 howMen++;
             }
         }
-        sumMen=heightMen/howMen;
-    return sumMen; }
-
-        public static int sumWomenHeight(int[] array, int sumWomen){
+        sumMen = heightMen / howMen;
+        return sumMen;
+    }
+    public static int sumWomenHeight(int[] array, int sumWomen) {
         int heightWomen = 0;
         int howWomen = 0;
         for (int j = 0; j < array.length; j++) {
@@ -36,9 +35,7 @@ public class Practice2 {
                 howWomen++;
             }
         }
-
-        sumWomen=heightWomen/howWomen;
-
+        sumWomen = heightWomen / howWomen;
         return sumWomen;
     }
 }
