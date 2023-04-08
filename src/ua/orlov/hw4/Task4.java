@@ -20,7 +20,6 @@ public class Task4 {
         for (int i = 0; i < arrayCopi.length; i++) {
             if (array[i] % 2 == 0) {
                 array[i] = 0;
-
             }
         }
         return arrayCopi;
