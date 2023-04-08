@@ -10,13 +10,15 @@ public class Task1 {
         for (int i = 0; 400 > i; i++) {
             array[i] = (int) (Math.random() * 200);
         }
-        sumNamber(array);
-        geometricSum(array);
+        int sum = 0;
+        double geometric = 0;
+        average(array, sum);
+        geometricSum(array, geometric);
+        System.out.println(average(array, sum));
+        System.out.println(geometricSum(array, geometric));
     }
 
-    public static void sumNamber(int[] array) {
-        int sum = 0;
-
+    public static int average(int[] array, int sum) {
         for (int i = 0; i < array.length; i++) {
             if (i == (array.length - 1)) {
                 sum = sum / array.length;
@@ -24,18 +26,16 @@ public class Task1 {
                 sum += array[i];
             }
         }
-        System.out.println(sum);
+        return sum;
     }
 
-    public static double geometricSum(int[] array) {
-        double geometric = 0;
+    public static double geometricSum(int[] array, double geometric) {
         for (int i = 0; i < array.length; i++)
             if (i == (array.length - 1)) {
                 geometric = Math.pow(geometric, 1 / array.length);
             } else {
                 geometric += array[i];
             }
-        System.out.println(geometric);
         return geometric;
     }
 }
