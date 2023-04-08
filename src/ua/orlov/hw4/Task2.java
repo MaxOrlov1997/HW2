@@ -9,12 +9,13 @@ public class Task2 {
         for (int i = 0; array.length > i; i++) {
             array[i] = (int) (Math.random() * 11);
         }
-        primeNumber(array);
+        int primeNum = 0;
+        primeNumber(array, primeNum);
+        System.out.println(primeNumber(array, primeNum));
     }
 
-    public static void primeNumber(int[] array) {
+    public static int primeNumber(int[] array, int primeNum) {
         int num;
-        int primeNum = 0;
         for (int i = 0; i < array.length; i++) {
             num = array[i];
             if (num == 2) {
@@ -29,6 +30,6 @@ public class Task2 {
                 }
             }
         }
-        System.out.println(primeNum);
+        return primeNum;
     }
 }

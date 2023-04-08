@@ -1,6 +1,7 @@
 package ua.orlov.hw2;
 
 public class Task3 {
+
     public static void main(String[] args) {
         int num = 10;
 evenNum(num);

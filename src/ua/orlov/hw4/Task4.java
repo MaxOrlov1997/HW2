@@ -11,17 +11,17 @@ public class Task4 {
             array[i] = (int) (Math.random() * 11);
         }
         evenNumbers(array);
+        System.out.println(Arrays.toString(array));
+
     }
 
-    public static void evenNumbers(int[] array) {
+    public static int[] evenNumbers(int[] array) {
         int[] arrayCopi = Arrays.copyOf(array, array.length);
         for (int i = 0; i < arrayCopi.length; i++) {
             if (array[i] % 2 == 0) {
                 array[i] = 0;
-                System.out.println(arrayCopi[i]);
-            } else {
-                System.out.println(arrayCopi[i]);
             }
         }
+        return arrayCopi;
     }
 }
