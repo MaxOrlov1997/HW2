@@ -32,11 +32,6 @@ public class Phone {
     public Phone() {
     }
 
-    public Phone(String receiveCall) {
-        this.receiveCall = receiveCall;
-
-    }
-
     public static void main(String... args) {
         Phone phone = new Phone();
         phone.number = "554455";
@@ -45,9 +40,21 @@ public class Phone {
         System.out.println(phone.number);
         System.out.println(phone.model);
         System.out.println(phone.weight);
-
+        System.out.println(getNumber(phone.number));
+        System.out.println(receiveCall(phone.receiveCall));
         }
+    public static String receiveCall (String... args) {
+        Phone phone = new Phone();
+        phone.receiveCall = "Звонит Мax";
+        return phone.receiveCall;
     }
+    public static String getNumber(String... args){
+        Phone phone= new Phone();
+        phone.number= "55445544";
+        return phone.number;
+    }
+
+}
 
 
 
