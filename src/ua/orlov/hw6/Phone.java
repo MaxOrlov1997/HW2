@@ -42,15 +42,17 @@ public class Phone {
         System.out.println(phone.weight);
         System.out.println(getNumber(phone.number));
         System.out.println(receiveCall(phone.receiveCall));
-        }
-    public static String receiveCall (String... args) {
+    }
+
+    public static String receiveCall(String... args) {
         Phone phone = new Phone();
         phone.receiveCall = "Звонит Мax";
         return phone.receiveCall;
     }
-    public static String getNumber(String... args){
-        Phone phone= new Phone();
-        phone.number= "55445544";
+
+    public static String getNumber(String... args) {
+        Phone phone = new Phone();
+        phone.number = "55445544";
         return phone.number;
     }
 

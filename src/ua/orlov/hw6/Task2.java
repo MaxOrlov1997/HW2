@@ -18,7 +18,7 @@ public class Task2 {
             }
 
             for (int i = 0; i < triangle.length; i++) {
-                for (int j = 0; j < triangle[i].length; j++) {
+                for (int j = 0; j < triangle[i].length; j++) { // в єтой строке ошибка, вместо j нужно i
                     System.out.print(triangle[i][j] + " ");
                 }
                 System.out.println();

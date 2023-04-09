@@ -15,17 +15,19 @@ public class Task4 {
         int[] array = new int[10];
         Scanner scan = new Scanner(System.in);
         int k = scan.nextInt();
-        printArray(array);
+        fillArray(array);
         int[] removeds = removed(array, k);
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(removeds));
     }
-    public static int[] printArray(int[] arrays) {
+
+    public static int[] fillArray(int[] arrays) {
         for (int j = 0; j < arrays.length; j++) {
             arrays[j] = ThreadLocalRandom.current().nextInt(0, 10);
         }
         return arrays;
     }
+
     public static int[] removed(int[] array, int k) {
         int num = 0;
         int[] rev1 = Arrays.copyOfRange(array, 0, k - 1);

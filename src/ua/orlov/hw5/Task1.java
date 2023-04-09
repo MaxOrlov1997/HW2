@@ -1,6 +1,8 @@
 package ua.orlov.hw5;
+
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
+
 public class Task1 {
     public static void main(String[] agrs) {
         int[][] array = new int[4][3];
@@ -12,7 +14,8 @@ public class Task1 {
             }
         }
     }
-    public static int printArray(int[][] arrays) {
+
+    public static void printArray(int[][] arrays) {
         for (int j = 0; j < arrays.length; j++) {
             if (j % 2 != 0) {
                 for (int i = 0; i < arrays[j].length; i++) {
@@ -24,6 +27,5 @@ public class Task1 {
                 }
             }
         }
-        return 0;
     }
 }
