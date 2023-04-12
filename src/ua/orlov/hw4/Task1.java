@@ -16,15 +16,12 @@ public class Task1 {
         System.out.println(geometricSum(array));
     }
 
-    public static int average(int[] array) {
-        int sum = 0;
+    public static double average(int[] array) {
+        double sum = 0;
         for (int i = 0; i < array.length; i++) {
-            if (i == (array.length - 1)) {
-                sum = sum / array.length;
-            } else {
-                sum += array[i];
-            }
+            sum += array[i];
         }
+        sum = sum / array.length;
         return sum;
     }
 

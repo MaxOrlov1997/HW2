@@ -10,7 +10,6 @@ public class Task4 {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 11);
         }
-        evenNumbers(array);
         System.out.println(Arrays.toString(evenNumbers(array)));
 
     }
