@@ -11,14 +11,14 @@ public class Task2 {
         int by = sc.nextInt();
         int cx = sc.nextInt();
         int cy = sc.nextInt();
-        int h = Math.abs(ax - bx);
-        int a = Math.abs(cy - ay);
 
-        printS(h, a);
+
+        printS(ax, ay, bx, by, cx, cy);
     }
 
-    public static int printS(int h, int a) {
-
+    public static int printS(int ax, int ay, int bx, int by, int cx, int cy) {
+        int h = Math.abs(ax - bx);
+        int a = Math.abs(cy - ay);
         int s = h * a;
         System.out.println(s);
         return s;
