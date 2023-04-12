@@ -9,12 +9,11 @@ public class Task3 {
         for (int i = 0; array.length > i; i++) {
             array[i] = (int) (Math.random() * 101);
         }
-        int compNum = 0;
-        compositeNumber(array, compNum);
-        System.out.println(compositeNumber(array, compNum));
+        System.out.println(compositeNumber(array));
     }
 
-    public static int compositeNumber(int[] array, int compNum) {
+    public static int compositeNumber(int[] array) {
+        int compNum = 0;
         int num;
         for (int i = 0; i < array.length; i++) {
             num = array[i];
