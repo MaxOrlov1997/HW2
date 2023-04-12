@@ -17,13 +17,17 @@ public class Task1 {
 
     public static void printArray(int[][] arrays) {
         for (int j = 0; j < arrays.length; j++) {
+            int n = 1;
             if (j % 2 != 0) {
                 for (int i = 0; i < arrays[j].length; i++) {
-                    arrays[j][i] = ThreadLocalRandom.current().nextInt(-10, 0);
+                    arrays[j][i] = n;
+                    n++;
                 }
             } else {
                 for (int i = 0; i < 3; i++) {
-                    arrays[j][i] = ThreadLocalRandom.current().nextInt(0, 10);
+                    arrays[j][i] = -n;
+                    n++;
+
                 }
             }
         }

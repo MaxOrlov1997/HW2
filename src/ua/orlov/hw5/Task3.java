@@ -15,7 +15,6 @@ public class Task3 {
                 {7, 9, 9, 9}};
         // printArray(array);
         System.out.println(Arrays.deepToString(array));
-        printrevArray(array);
         System.out.println(Arrays.deepToString(printrevArray(array)));
     }
 
@@ -29,14 +28,13 @@ public class Task3 {
       }*/
 // оставлю на случай если нужно елементы задавать рандомные
     public static int[][] printrevArray(int[][] revArrays) {
-        int[][] revArray = Arrays.copyOf(revArrays, revArrays.length);
-        int[][] originalArray = new int[revArray.length][revArray.length];
-        for (int j = 0; j < revArray.length; j++) {
-            for (int i = 0; i < revArray[j].length; i++) {
+        int[][] transposed = new int[revArrays.length][revArrays.length];
+        for (int j = 0; j < revArrays.length; j++) {
+            for (int i = 0; i < revArrays[j].length; i++) {
 
-                originalArray[j][i] = revArray[i][j];
+                transposed[j][i] = revArrays[i][j];
             }
         }
-        return originalArray;
+        return transposed;
     }
 }
