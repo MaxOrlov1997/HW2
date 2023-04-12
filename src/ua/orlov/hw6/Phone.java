@@ -4,8 +4,6 @@ public class Phone {
     String number;
     String model;
     String weight;
-    String receiveCall;
-    String getNumber;
 
     @Override
     public String toString() {
@@ -13,8 +11,6 @@ public class Phone {
                 "number='" + number + '\'' +
                 ", model='" + model + '\'' +
                 ", weight='" + weight + '\'' +
-                ", receiveCall='" + receiveCall + '\'' +
-                ", getNumber='" + getNumber + '\'' +
                 '}';
     }
 
@@ -40,20 +36,18 @@ public class Phone {
         System.out.println(phone.number);
         System.out.println(phone.model);
         System.out.println(phone.weight);
-        System.out.println(getNumber(phone.number));
-        System.out.println(receiveCall(phone.receiveCall));
+        System.out.println(phone.getNumber(phone.number));
+        String Name = "Max";
+        phone.receiveCall(Name);
+        System.out.println(phone.receiveCall("Звонит " + Name));
     }
 
-    public static String receiveCall(String... args) {
-        Phone phone = new Phone();
-        phone.receiveCall = "Звонит Мax";
-        return phone.receiveCall;
+    public String receiveCall(String Name) {
+        return Name;
     }
 
-    public static String getNumber(String... args) {
-        Phone phone = new Phone();
-        phone.number = "55445544";
-        return phone.number;
+    public String getNumber(String... args) {
+        return this.number;
     }
 
 }
