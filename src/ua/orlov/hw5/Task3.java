@@ -15,7 +15,7 @@ public class Task3 {
                 {7, 9, 9, 9}};
         // printArray(array);
         System.out.println(Arrays.deepToString(array));
-        System.out.println(Arrays.deepToString(printrevArray(array)));
+        System.out.println(Arrays.deepToString(transposeMatrix(array)));
     }
 
     /*  public static int[][] printArray(int[][] arrays) {
@@ -27,7 +27,7 @@ public class Task3 {
           return arrays;
       }*/
 // оставлю на случай если нужно елементы задавать рандомные
-    public static int[][] printrevArray(int[][] revArrays) {
+    public static int[][] transposeMatrix(int[][] revArrays) {
         int[][] transposed = new int[revArrays.length][revArrays.length];
         for (int j = 0; j < revArrays.length; j++) {
             for (int i = 0; i < revArrays[j].length; i++) {

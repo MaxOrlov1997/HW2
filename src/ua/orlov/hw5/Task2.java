@@ -6,25 +6,24 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Task2 {
     public static void main(String[] args) {
         int[] array = new int[4];
-        printArray(array);
+        fillArray(array);
         System.out.println(Arrays.toString(array));
         sortArray(array);
-        System.out.println(Arrays.toString(sortArray(array)));
+        System.out.println(sortArray(array));
     }
 
-    public static int[] printArray(int[] arrays) {
+    public static int[] fillArray(int[] arrays) {
         for (int j = 0; j < arrays.length; j++) {
             arrays[j] = ThreadLocalRandom.current().nextInt(0, 10);
         }
         return arrays;
     }
 
-    public static int[] sortArray(int[] array) {
+    public static boolean sortArray(int[] array) {
         int[] sorted = Arrays.copyOf(array, array.length);
         Arrays.sort(sorted);
         boolean sort = array.equals(sorted);
-        System.out.println(sort);
-        return sorted;
+        return sort;
     }
 }
 
