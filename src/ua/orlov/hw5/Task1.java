@@ -16,13 +16,13 @@ public class Task1 {
     }
 
     public static void fillArray(int[][] arrays) {
+        int n = 1;
         for (int j = 0; j < arrays.length; j++) {
-            int n = 1;
             for (int i = 0; i < arrays[j].length; i++) {
             if (j % 2 != 0) {
-                    arrays[j][i] = n++;
-            } else {
                     arrays[j][i] -= n++;
+            } else {
+                    arrays[j][i] = n++;
                 }
             }
         }
