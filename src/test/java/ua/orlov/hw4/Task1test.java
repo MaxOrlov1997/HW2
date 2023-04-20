@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test;
 public class Task1test {
 
     @Test
-    void testAverageGeometricsum() {
+    void testAverage() {
         double[] array = {12, 12, 15};
         Assertions.assertEquals(13, Task1.average(array));
-        Assertions.assertEquals(12.9266081401913, Task1.geometricSum(array));
     }
+
     @Test
-    void testInvalidsum() {
-        double[] array = {17, 11, 15};
-        Assertions.assertEquals(13, Task1.average(array));
+    void testGeometricsum() {
+        double[] array = {12, 12, 15};
         Assertions.assertEquals(12.9266081401913, Task1.geometricSum(array));
     }
+
 }
