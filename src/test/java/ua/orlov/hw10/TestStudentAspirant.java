@@ -1,11 +1,9 @@
 package ua.orlov.hw10;
 
-import org.junit.Assert;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class testStudentAspirant {
+public class TestStudentAspirant {
 
 
     @Test

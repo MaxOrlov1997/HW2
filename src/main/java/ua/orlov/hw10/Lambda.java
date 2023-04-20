@@ -7,17 +7,21 @@ package ua.orlov.hw10;
 Реализовать этот интерфейс в методе main через лямбду (без использования
 сторонних пакетов типа Math).*/
 
- public class Lamba {
-      public static void main (String[] args) {
-          Pow op = (number, pow) ->{int numstep=1;
-              for (int i = 1; i <= pow; i++) {
-              numstep *= number;
-          } return numstep;};
-          int result = op.pow(2, 3);
-          System.out.println(result);
-      }
+public class Lambda {
+    public static void main(String[] args) {
+        Pow op = (number, pow) -> {
+            int numstep = 1;
+            for (int i = 1; i <= pow; i++) {
+                numstep *= number;
+            }
+            return numstep;
+        };
+        int result = op.pow(2, 3);
+        System.out.println(result);
+    }
 }
- interface Pow{
-        int pow(int number, int pow);
- }
+
+interface Pow {
+    int pow(int number, int pow);
+}
 
