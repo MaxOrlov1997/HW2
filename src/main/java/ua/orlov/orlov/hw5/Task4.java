@@ -1,4 +1,4 @@
-package ua.orlov.hw5;
+package ua.orlov.orlov.hw5;
 
 import java.sql.Array;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package ua.orlov.hw6;
+package ua.orlov.orlov.hw6;
 
 public class Task2 {
         public static void main(String[] args) {

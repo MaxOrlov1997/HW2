@@ -1,4 +1,4 @@
-package ua.orlov.hw4;
+package ua.orlov.orlov.hw4;
 
 import java.util.Arrays;
 

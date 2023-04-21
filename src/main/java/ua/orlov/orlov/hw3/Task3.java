@@ -1,4 +1,4 @@
-package ua.orlov.hw3;
+package ua.orlov.orlov.hw3;
 
 import java.util.Scanner;
 

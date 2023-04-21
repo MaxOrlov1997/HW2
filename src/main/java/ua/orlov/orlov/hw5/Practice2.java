@@ -1,4 +1,4 @@
-package ua.orlov.hw5;
+package ua.orlov.orlov.hw5;
 
 import java.util.concurrent.ThreadLocalRandom;
 

@@ -1,4 +1,4 @@
-package ua.orlov.hw7;
+package ua.orlov.orlov.hw7;
 
 public class tasktest {
     public static void main(String[] args) {
