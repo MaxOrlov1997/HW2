@@ -1,15 +1,13 @@
 package ua.orlov.hw7;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Vector {
-    static int N=4;
+    static int N = 4;
     int x;
     int y;
     int z;
-
 
     public Vector(int x, int y, int z) {
         this.x = x;
@@ -19,18 +17,12 @@ class Vector {
 
     public static void main(String[] args) {
         Vector vector = new Vector(5, 6, 7);
-        Vector vector1= new Vector(4,6,2);
+        Vector vector1 = new Vector(4, 6, 2);
         int[][] arrayRaudomVector = generateRandomVectors(N);
-        Vector vectorL = new Vector(5,6,7);
+        Vector vectorL = new Vector(5, 6, 7);
         double vectorLenght = vectorL.vectorLenght();
-        //Vector vectorProd = new Vector(4,6,2);
-        //Vector arrayProd = vectorProd.productVector(vector);
-        Vector vectorCos = new Vector(4,6,2);
+        Vector vectorCos = new Vector(4, 6, 2);
         double cosVector = vectorCos.cosVector(vector);
-      //  Vector vectorArray = new Vector(4, 6, 2);
-       // Vector array = vectorArray.sumVector(vector);
-       // Vector vectorArraydif = new Vector(4, 6, 2);
-      //  Vector arrayDif = vectorArraydif.differenceVector(vector);
         System.out.println("Product of Vector - " + vector.productVector(vector1));
         System.out.println("vectorLenght - " + vectorLenght);
         System.out.println("cos ϕ " + cosVector);
@@ -60,14 +52,14 @@ class Vector {
         int dx = this.x - vector.x;
         int dy = this.y - vector.y;
         int dz = this.z - vector.z;
-        return new Vector(dx, dy,dz);
+        return new Vector(dx, dy, dz);
     }
 
     public Vector sumVector(Vector vector) {
         int sx = this.x + vector.x;
         int sy = this.y + vector.y;
         int sz = this.z + vector.z;
-        return new Vector(sx,sy,sz);
+        return new Vector(sx, sy, sz);
     }
 
     public static int[][] generateRandomVectors(int n) {
@@ -79,5 +71,14 @@ class Vector {
 
         }
         return array;
+    }
+
+    @Override
+    public String toString() {
+        return "Vector{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
     }
 }
