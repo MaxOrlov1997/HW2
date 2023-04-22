@@ -1,79 +1,73 @@
 package ua.orlov.hw7;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Vector {
-    static int N;
+    static int N=4;
     int x;
     int y;
     int z;
-    int xx;
-    int yy;
-    int zz;
 
-    public Vector(int x, int y, int z, int xx, int yy, int zz) {
+
+    public Vector(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.xx = xx;
-        this.yy = yy;
-        this.zz = zz;
     }
 
     public static void main(String[] args) {
-        Vector vector = new Vector(5, 6, 7, 4, 6, 2);
-        vector.N = 4;
-        int[][] arrayRaudomVector = generateRandomVectors(vector.N);
-        Vector vectorL = new Vector(5, 6, 7, 4, 6, 2);
+        Vector vector = new Vector(5, 6, 7);
+        Vector vector1= new Vector(4,6,2);
+        int[][] arrayRaudomVector = generateRandomVectors(N);
+        Vector vectorL = new Vector(5,6,7);
         double vectorLenght = vectorL.vectorLenght();
-        Vector vectorProd = new Vector(5, 6, 7, 4, 6, 2);
-        int[] arrayProd = vectorProd.productVector();
-        Vector vectorCos = new Vector(5, 6, 7, 4, 6, 2);
-        double cosVector = vectorCos.cosVector();
-        Vector vectorArray = new Vector(5, 6, 7, 4, 6, 2);
-        int[] array = vectorArray.sumVector();
-        Vector vectorArraydif = new Vector(5, 6, 7, 4, 6, 2);
-        int[] arrayDif = vectorArraydif.differenceVector();
-        System.out.println("Product of Vector - " + Arrays.toString(arrayProd));
+        //Vector vectorProd = new Vector(4,6,2);
+        //Vector arrayProd = vectorProd.productVector(vector);
+        Vector vectorCos = new Vector(4,6,2);
+        double cosVector = vectorCos.cosVector(vector);
+      //  Vector vectorArray = new Vector(4, 6, 2);
+       // Vector array = vectorArray.sumVector(vector);
+       // Vector vectorArraydif = new Vector(4, 6, 2);
+      //  Vector arrayDif = vectorArraydif.differenceVector(vector);
+        System.out.println("Product of Vector - " + vector.productVector(vector1));
         System.out.println("vectorLenght - " + vectorLenght);
         System.out.println("cos ϕ " + cosVector);
         System.out.println("Arrays Raudom - " + Arrays.deepToString(arrayRaudomVector));
-        System.out.println("Sum Vector - " + Arrays.toString(array));
-        System.out.println("Difference Vector - " + Arrays.toString(arrayDif));
+        System.out.println("Sum Vector - " + vector.sumVector(vector1));
+        System.out.println("Difference Vector - " + vector.differenceVector(vector1));
     }
 
     public double vectorLenght() {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
-    public int[] productVector() {
-        int ax = y * zz - z * yy;
-        int ay = z * xx - x * zz;
-        int az = x * yy - y * xx;
-        int[] arrayProd = {ax, ay, az};
-        return arrayProd;
+    public Vector productVector(Vector vector) {
+        int ax = this.y * vector.z - this.z * vector.y;
+        int ay = this.z * vector.x - this.x * vector.z;
+        int az = this.x * vector.y - this.y * vector.x;
+
+        return new Vector(ax, ay, az);
     }
 
-    public double cosVector() {
-        return (x * xx + y * yy + z * zz) / (vectorLenght() * (Math.sqrt(xx * xx + yy * yy + zz * zz)));
+    public double cosVector(Vector vector) {
+        return (this.x * vector.x + this.y * vector.y + this.z * vector.z) / (vectorLenght() *
+                (Math.sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z)));
     }
 
-    public int[] differenceVector() {
-        int dx = x - xx;
-        int dy = y - yy;
-        int dz = z - zz;
-        int[] array = {dx, dy, dz};
-        return array;
+    public Vector differenceVector(Vector vector) {
+        int dx = this.x - vector.x;
+        int dy = this.y - vector.y;
+        int dz = this.z - vector.z;
+        return new Vector(dx, dy,dz);
     }
 
-    public int[] sumVector() {
-        int sx = x + xx;
-        int sy = y + yy;
-        int sz = z + zz;
-        int[] array = {sx, sy, sz};
-
-        return array;
+    public Vector sumVector(Vector vector) {
+        int sx = this.x + vector.x;
+        int sy = this.y + vector.y;
+        int sz = this.z + vector.z;
+        return new Vector(sx,sy,sz);
     }
 
     public static int[][] generateRandomVectors(int n) {
