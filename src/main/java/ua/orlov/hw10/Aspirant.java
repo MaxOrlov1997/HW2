@@ -1,19 +1,9 @@
 package ua.orlov.hw10;
 
 public class Aspirant extends Student {
-    String work = "Work IT";
-
-    public Aspirant(String firstName, String lastName, String group, double avaregeMark, String work) {
-        super(firstName, lastName, group, avaregeMark);
-        this.work = work;
-    }
-
-    public Aspirant() {
-
-    }
 
     @Override
-    public double getScholarship() {
+    public double getScholarship(double avaregeMark) {
         if (avaregeMark == 5) {
             return 200;
         } else {
@@ -21,7 +11,7 @@ public class Aspirant extends Student {
         }
     }
 
-    public String getScientificWork() {
-        return work;
+    public void scientificWork() {
+        String work = "Aspirant have scientific work";
     }
 }
