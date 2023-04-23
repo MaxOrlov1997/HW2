@@ -18,7 +18,7 @@ class Vector {
     public static void main(String[] args) {
         Vector vector = new Vector(5, 6, 7);
         Vector vector1 = new Vector(4, 6, 2);
-        int[][] arrayRaudomVector = generateRandomVectors(N);
+        Vector[] arrayRaudomVector = generateRandomVectors(N);
         Vector vectorL = new Vector(5, 6, 7);
         double vectorLenght = vectorL.vectorLenght();
         Vector vectorCos = new Vector(4, 6, 2);
@@ -62,13 +62,13 @@ class Vector {
         return new Vector(sx, sy, sz);
     }
 
-    public static int[][] generateRandomVectors(int n) {
-        int[][] array = new int[n][3];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = ThreadLocalRandom.current().nextInt(0, 10);
-            }
-
+    public static Vector[] generateRandomVectors(int N) {
+        Vector[] array = new Vector[N];
+        for (int i = 0; i < N; i++) {
+            int a = ThreadLocalRandom.current().nextInt(0, 10);
+            int b = ThreadLocalRandom.current().nextInt(0, 10);
+            int c = ThreadLocalRandom.current().nextInt(0, 10);
+            array[i] = new Vector(a, b, c);
         }
         return array;
     }
