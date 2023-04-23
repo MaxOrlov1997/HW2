@@ -4,6 +4,7 @@ public class Runner {
     public static void main(String[] args) {
         Car car = new Car();
         System.out.println(car.muving());
+        System.out.println(car.statistics());
         System.out.println(car.res());
         PassengerCar passengerCar = new PassengerCar();
         System.out.println("Количесвто пасажиров в машине - " + passengerCar.putPassenger());

@@ -31,8 +31,8 @@ public class Truck extends Car{
     }
     @Override
     public String muving(){
-        this.tankSize=this.tankSize-(this.fuelConsumption * 2);
-        if(tankSize == 0 ){
+       double tanksizeIncar=this.tankSize/(fuelConsumption * 2);
+        if(tanksizeIncar == 0 ){
             System.out.println("Нет топлива");
             return "";
         }

@@ -14,16 +14,18 @@ public class PassengerCar extends Car {
 
     }
 
-    public int putPassenger(){
-        System.out.println("Ведите количество пасажиров в машине, только положительные значения");
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        System.out.println("Сколько хотите посадить в машину пасажиров?");
-        int newPassenger = scan.nextInt();
-        if (newPassenger+n>3){
-            System.out.println("Нет посадочных мест, проверте коректность введённых данных");
-            return 0;}
-        passenger = n+newPassenger;
-        return passenger;
+    public int putPassenger() {
+        for (;;){
+            System.out.println("Ведите количество пассажиров в машине, только положительные значения");
+            Scanner scan = new Scanner(System.in);
+             int n = scan.nextInt();
+            System.out.println("Сколько хотите посадить в машину пассажиров?");
+             int newPassenger = scan.nextInt();
+            if (newPassenger + n <= 3) {
+                passenger = n + newPassenger;
+                return passenger;
+            }
+            System.out.println("Нет посадочных мест, автомобиль может вместить всего 3 пассажиров");
+        }
     }
 }
