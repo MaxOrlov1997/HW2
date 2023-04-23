@@ -17,7 +17,7 @@ public class Student {
 
     }
 
-    public double getScholarship(double avaregeMark) {
+    public double getScholarship() {
         if (avaregeMark == 5.0) {
             return 100;
         } else {

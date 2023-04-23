@@ -1,9 +1,17 @@
 package ua.orlov.hw10;
 
 public class Aspirant extends Student {
+    String work = "Scientific work";
 
     @Override
-    public double getScholarship(double avaregeMark) {
+    public String toString() {
+        return "Aspirant{" +
+                "work='" + work + '\'' +
+                '}';
+    }
+
+    @Override
+    public double getScholarship() {
         if (avaregeMark == 5) {
             return 200;
         } else {
@@ -11,7 +19,7 @@ public class Aspirant extends Student {
         }
     }
 
-    public void scientificWork() {
-        String work = "Aspirant have scientific work";
+    public void getScientificWork() {
+        System.out.println(work);
     }
 }
