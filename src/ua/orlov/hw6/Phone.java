@@ -1,5 +1,4 @@
 package ua.orlov.hw6;
-
 public class Phone {
     String number;
     String model;
@@ -36,7 +35,7 @@ public class Phone {
         System.out.println(phone.number);
         System.out.println(phone.model);
         System.out.println(phone.weight);
-        System.out.println(phone.getNumber(phone.number));
+        System.out.println("Номер из getNamber - " + phone.getNumber());
         String Name = "Max";
         phone.receiveCall(Name);
         Phone firstphone = new Phone(phone.number, phone.model);
@@ -57,8 +56,8 @@ public class Phone {
         System.out.println("Звонит " + Name);
     }
 
-    public String getNumber(String...args) {
-        return "";
+    public String getNumber() {
+        return number;
     }
 
 }
