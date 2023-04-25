@@ -30,5 +30,6 @@ public class Task1 {
         }
         geometric = Math.pow(geometric, 1.0 / array.length);
         return geometric;
+
     }
 }
