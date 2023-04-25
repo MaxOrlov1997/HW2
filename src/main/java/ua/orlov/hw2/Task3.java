@@ -4,7 +4,7 @@ public class Task3 {
 
     public static void main(String[] args) {
         int num = 10;
-        evenNum(num);
+evenNum(num);
         System.out.println(num);
     }
 
@@ -15,4 +15,3 @@ public class Task3 {
             System.out.println("Не четное");
     }
 }
-
