@@ -36,21 +36,33 @@ public class Phone {
         System.out.println(phone.number);
         System.out.println(phone.model);
         System.out.println(phone.weight);
-        System.out.println(phone.getNumber(phone.number));
+        System.out.println("Номер из getNamber - " + phone.getNumber());
         String Name = "Max";
         phone.receiveCall(Name);
-        System.out.println(phone.receiveCall("Звонит " + Name));
+        Phone firstphone = new Phone(phone.number, phone.model);
+        firstphone.model = "Samsung";
+        firstphone.number = "095";
+        System.out.println(firstphone.model);
+        System.out.println(firstphone.number);
+        Phone secondPhone = new Phone(phone.number, phone.model, phone.weight);
+        secondPhone.number = "096";
+        secondPhone.model = "Acer";
+        secondPhone.weight = "2.2kg";
+        System.out.println(secondPhone.number);
+        System.out.println(secondPhone.model);
+        System.out.println(secondPhone.weight);
     }
 
-    public String receiveCall(String Name) {
-        return Name;
+    public void receiveCall(String Name) {
+        System.out.println("Звонит " + Name);
     }
 
-    public String getNumber(String... args) {
-        return this.number;
+    public String getNumber() {
+        return number;
     }
 
 }
+
 
 
 

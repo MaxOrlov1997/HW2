@@ -8,8 +8,6 @@ public class Practice2 {
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(-180, 150);
         }
-        double sumMen = sumMenHeight(array);
-        double sumWomen = sumWomenHeight(array);
         System.out.println(sumMenHeight(array));
         System.out.println(sumWomenHeight(array));
     }

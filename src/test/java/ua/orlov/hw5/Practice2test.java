@@ -6,21 +6,22 @@ import org.junit.jupiter.api.Test;
 
 public class Practice2test {
     @Test
-    void testHeightmenwomen(){
-        int[] array = {-168,-192,157,-187,162};
+    void testHeightmenwomen() {
+        int[] array = {-168, -192, 157, -187, 162};
         Assertions.assertEquals(182.33333333333334, Practice2.sumMenHeight(array));
         Assertions.assertEquals(159.5, Practice2.sumWomenHeight(array));
     }
+
     @Test
-    void testInvalidHeightmenwomen(){
-        int[] array = {168,192,-157,187,162};
-        Assertions.assertEquals(182.33333333333334, Practice2.sumMenHeight(array));
-        Assertions.assertEquals(159.5, Practice2.sumWomenHeight(array));
+    void testWomen() {
+        int[] array = {168, 168, 168};
+        Assertions.assertEquals(168, Practice2.sumWomenHeight(array)); // только для положительных
     }
+
     @Test
-    void testEmptymenwomen(){
-        int[] array = {};
-        Assertions.assertEquals(182.33333333333334, Practice2.sumMenHeight(array));
-        Assertions.assertEquals(159.5, Practice2.sumWomenHeight(array));
+    void testMen() {
+        int[] array = {-168, -168, -168};
+        Assertions.assertEquals(168, Practice2.sumMenHeight(array)); // только для отрицательных
+
     }
 }
