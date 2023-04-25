@@ -1,10 +1,12 @@
 package ua.orlov.hw5;
+
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
+
 public class Task1 {
     public static void main(String[] agrs) {
         int[][] array = new int[4][3];
-        printArray(array);
+        fillArray(array);
         for (int j = 0; j < array.length; j++) {
             System.out.println(" ");
             for (int i = 0; i < array[j].length; i++) {
@@ -12,18 +14,17 @@ public class Task1 {
             }
         }
     }
-    public static int printArray(int[][] arrays) {
+
+    public static void fillArray(int[][] arrays) {
+        int n = 1;
         for (int j = 0; j < arrays.length; j++) {
+            for (int i = 0; i < arrays[j].length; i++) {
             if (j % 2 != 0) {
-                for (int i = 0; i < arrays[j].length; i++) {
-                    arrays[j][i] = ThreadLocalRandom.current().nextInt(-10, 0);
-                }
+                    arrays[j][i] -= n++;
             } else {
-                for (int i = 0; i < 3; i++) {
-                    arrays[j][i] = ThreadLocalRandom.current().nextInt(0, 10);
+                    arrays[j][i] = n++;
                 }
             }
         }
-        return 0;
     }
 }

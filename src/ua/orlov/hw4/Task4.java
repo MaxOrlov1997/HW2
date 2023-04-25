@@ -10,16 +10,15 @@ public class Task4 {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 11);
         }
-        evenNumbers(array);
-        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(evenNumbers(array)));
 
     }
 
     public static int[] evenNumbers(int[] array) {
         int[] arrayCopi = Arrays.copyOf(array, array.length);
         for (int i = 0; i < arrayCopi.length; i++) {
-            if (array[i] % 2 == 0) {
-                array[i] = 0;
+            if (arrayCopi[i] % 2 == 0) {
+                arrayCopi[i] = 0;
             }
         }
         return arrayCopi;

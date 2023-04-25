@@ -1,13 +1,15 @@
 package ua.orlov.hw5;
+
 import java.util.concurrent.ThreadLocalRandom;
+
 public class Practice1 {
     public static void main(String[] args) {
         int[] array = new int[12];
         int sum = 0;
-        System.out.println(printMoney(array, sum));
-        printMoney(array, sum);
+        System.out.println(sumGoodsWithPriceOverThousand(array, sum));
     }
-    public static int printMoney(int[] how, int sum) {
+
+    public static int sumGoodsWithPriceOverThousand(int[] how, int sum) {
         for (int i = 0; i < how.length; i++) {
             how[i] = ThreadLocalRandom.current().nextInt(900, 1200);
         }
