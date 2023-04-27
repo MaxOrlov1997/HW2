@@ -1,11 +1,7 @@
 package ua.orlov.hw12;
 
 public class Task1 {
-    static String name= "Max";
-
-    public Task1(String name) {
-        this.name = name;
-    }
+    static String name = "Max";
 
     public static void main(String[] args) {
         try {
