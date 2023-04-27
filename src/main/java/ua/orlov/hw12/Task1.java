@@ -1,7 +1,7 @@
 package ua.orlov.hw12;
 
 public class Task1 {
-    String name;
+    static String name= "Max";
 
     public Task1(String name) {
         this.name = name;
@@ -9,7 +9,7 @@ public class Task1 {
 
     public static void main(String[] args) {
         try {
-            throw new Exception("Max");
+            throw new Exception(name);
         } catch (Exception a) {
             System.out.println(a);
         } finally {
