@@ -5,17 +5,41 @@ import java.util.Arrays;
 public class Runner {
     public static void main(String[] args) {
         SortBubble sortBubble = new SortBubble();
+        int[] array = sortBubble.array;
         long start = System.nanoTime();
-        sortBubble.sortBubble(sortBubble.array);
+        int[] resBubble = sortBubble.sortBubble(array);
+        // специально пишу так, для того если нужно изменить массив то только в одном месте
         long finish = System.nanoTime();
-        long res = finish-start;
-        System.out.println(Arrays.toString(sortBubble.sortBubble(sortBubble.array)));
-        System.out.println(res);
+        long res = finish - start;
+        System.out.println(Arrays.toString(resBubble));
+        System.out.println("Sort bubble - " + res);
+
         long startQuick = System.nanoTime();
-        sortBubble.quickSort(sortBubble.array,1,sortBubble.array.length-1);
+        int[] resQuickBubble = sortBubble.quickSort(array, 1, array.length - 1);
         long finishQuick = System.nanoTime();
-        long resQuick = finishQuick-startQuick;
-        System.out.println(resQuick);
-        System.out.println(Arrays.toString(sortBubble.quickSort(sortBubble.array, 1,sortBubble.array.length-1)));
+        long resQuick = finishQuick - startQuick;
+        System.out.println("Quick sort - " + resQuick);
+        System.out.println(Arrays.toString(resQuickBubble));
+
+        BinarySearch ob = new BinarySearch();
+        int arr[] = sortBubble.array;
+        int x = 5;
+        long startBinary = System.nanoTime();
+        int result = ob.binarySearch(arr, x);
+        long finishBinary = System.nanoTime();
+        long resBinary = finishBinary - startBinary;
+        if (result == -1) {
+            System.out.println(
+                    "Element is not present in array");
+        } else
+            System.out.println("Binary Search element - " + result);
+        System.out.println("Binary Search - " + resBinary);
+
+        long startLinear = System.nanoTime();
+        int resLinear = ob.linearSearch(arr, 4);
+        long finishLinear = System.nanoTime();
+        long restimeLinear = finishLinear - startLinear;
+        System.out.println("Linear Search - " + resLinear);
+        System.out.println(restimeLinear);
     }
 }
