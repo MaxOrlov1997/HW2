@@ -1,20 +1,18 @@
 package ua.orlov.hw13;
 
-public class SortBubble {
-    int[] array = {6, 5, 4, 3, 2, 1, 9, 8, 7};
+import java.util.Arrays;
 
-    public SortBubble() {
-        this.array = array;
-    }
+public class SortBubble {
 
     int[] sortBubble(int[] array) {
+        int[] arrays = Arrays.copyOf(array, array.length);
         int flag = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int res = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = res;
+        for (int i = 0; i < arrays.length; i++) {
+            for (int j = 0; j < arrays.length - i - 1; j++) {
+                if (arrays[j] > arrays[j + 1]) {
+                    int res = arrays[j];
+                    arrays[j] = arrays[j + 1];
+                    arrays[j + 1] = res;
                     flag = 1;
                 }
             }
@@ -22,33 +20,32 @@ public class SortBubble {
                 break;
             }
         }
-        return array;
+        return arrays;
     }
 
-    int[] quickSort(int arr[], int begin, int end) {
+    int[] quickSort(int arrays[], int begin, int end) {
         if (begin < end) {
-            int partitionIndex = partition(arr, begin, end);
-
-            quickSort(arr, begin, partitionIndex - 1);
-            quickSort(arr, partitionIndex + 1, end);
+            int partitionIndex = partition(arrays, begin, end);
+            quickSort(arrays, begin, partitionIndex - 1);
+            quickSort(arrays, partitionIndex + 1, end);
         }
-        return arr;
+        return arrays;
     }
 
-    private int partition(int arr[], int begin, int end) {
-        int pivot = arr[end];
+    private int partition(int arrays[], int begin, int end) {
+        int pivot = arrays[end];
         int i = (begin - 1);
         for (int j = begin; j < end; j++) {
-            if (arr[j] <= pivot) {
+            if (arrays[j] <= pivot) {
                 i++;
-                int swapTemp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = swapTemp;
+                int swapTemp = arrays[i];
+                arrays[i] = arrays[j];
+                arrays[j] = swapTemp;
             }
         }
-        int swapTemp = arr[i + 1];
-        arr[i + 1] = arr[end];
-        arr[end] = swapTemp;
+        int swapTemp = arrays[i + 1];
+        arrays[i + 1] = arrays[end];
+        arrays[end] = swapTemp;
         return i + 1;
     }
 }

@@ -15,6 +15,7 @@ public class BinarySearchtest {
     public void testBinarynotsort() {
         BinarySearch binarySearch = new BinarySearch();
         Assertions.assertEquals(3, binarySearch.binarySearch(new int[]{3, 8, 2, 7, 1}, 7));
+        // просто для проверки, если указать 8 то тест провалится
         Assertions.assertEquals(1, binarySearch.linearSearch(new int[]{3, 8, 2, 7, 1}, 8));
     }
 
