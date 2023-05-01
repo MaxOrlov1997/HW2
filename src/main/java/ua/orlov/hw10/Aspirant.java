@@ -1,13 +1,15 @@
 package ua.orlov.hw10;
 
 public class Aspirant extends Student {
-    String work = "Scientific work";
+    String work;
 
-    @Override
-    public String toString() {
-        return "Aspirant{" +
-                "work='" + work + '\'' +
-                '}';
+    public Aspirant(String firstName, String lastName, String group, double avaregeMark, String work) {
+        super(firstName, lastName, group, avaregeMark);
+        this.work = work;
+    }
+
+    public Aspirant() {
+
     }
 
     @Override
@@ -19,7 +21,7 @@ public class Aspirant extends Student {
         }
     }
 
-    public void getScientificWork() {
-        System.out.println(work);
+    public String getScientificWork() {
+        return work = "Work IT";
     }
 }
