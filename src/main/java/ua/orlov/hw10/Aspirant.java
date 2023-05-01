@@ -1,7 +1,7 @@
 package ua.orlov.hw10;
 
 public class Aspirant extends Student {
-    String work;
+    String work = "Work IT";
 
     public Aspirant(String firstName, String lastName, String group, double avaregeMark, String work) {
         super(firstName, lastName, group, avaregeMark);
@@ -22,6 +22,6 @@ public class Aspirant extends Student {
     }
 
     public String getScientificWork() {
-        return work = "Work IT";
+        return work;
     }
 }
