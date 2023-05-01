@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PassengerCar extends Car {
     int passenger;
 
-    public PassengerCar(String series, String year, String color, double tankSize, String currentFuel, double fuelConsumption, int passenger) {
+    public PassengerCar(String series, String year, String color, double tankSize, double currentFuel, double fuelConsumption, int passenger) {
         super(series, year, color, tankSize, currentFuel, fuelConsumption);
         this.passenger = passenger;
     }
@@ -14,18 +14,17 @@ public class PassengerCar extends Car {
 
     }
 
-    public int putPassenger() {
-        for (;;){
-            System.out.println("Ведите количество пассажиров в машине, только положительные значения");
-            Scanner scan = new Scanner(System.in);
-             int n = scan.nextInt();
-            System.out.println("Сколько хотите посадить в машину пассажиров?");
-             int newPassenger = scan.nextInt();
-            if (newPassenger + n <= 3) {
-                passenger = n + newPassenger;
-                return passenger;
+    public void putPassenger() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Сколько хотите посадить в машину пассажиров?");
+        for (; ; ) {
+            int newPassenger = scan.nextInt();
+            if (newPassenger <= 3) {
+                System.out.println("Посадка успешна, всего сидит " + newPassenger + " пассажиров");
+                break;
             }
             System.out.println("Нет посадочных мест, автомобиль может вместить всего 3 пассажиров");
         }
     }
 }
+
