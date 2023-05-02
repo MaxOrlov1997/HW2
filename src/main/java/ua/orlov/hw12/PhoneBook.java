@@ -15,13 +15,16 @@ public class PhoneBook {
         Scanner scan = new Scanner(System.in);
         String phoneNumber = scan.nextLine();
         Optional<Integer> res = findIndexByPhoneNumber(phoneNumber);
+        if (res.isPresent()) {
+            System.out.println(PHONE_BOOK[res.get()]);
+        } else
         System.out.println(res);
     }
 
     public static Optional<Integer> findIndexByPhoneNumber(String phoneNumber) {
         for (int i = 0; i < PHONE_BOOK.length; i++) {
             if (phoneNumber.equals(PHONE_BOOK[i])) {
-                return Optional.of(Integer.valueOf("Номер есть"));
+                return Optional.of((i));
             }
         }
         return Optional.empty();
