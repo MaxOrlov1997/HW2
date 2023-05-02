@@ -1,20 +1,14 @@
 package ua.orlov.hw12;
 
 public class Task2 {
-static String name = "Max";
-static String nameTwo= "Alex";
+    static String name = "Max";
+    static String nameTwo = "Alex";
 
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         try {
             f();
         } catch (Exception a) {
             System.out.println(a);
-        }
-        try {
-            g();
-        } catch (Exception e) {
-            System.out.println(e);
         }
     }
 
@@ -22,7 +16,6 @@ static String nameTwo= "Alex";
         try {
             g();
         } catch (Exception e) {
-
             throw new Exception(nameTwo);
         }
     }
