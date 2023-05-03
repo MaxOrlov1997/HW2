@@ -5,8 +5,8 @@ public class Task1 {
 
     public static void main(String[] args) {
         try {
-            throw new Exception(name);
-        } catch (Exception a) {
+            throw new IllegalAccessError(name);
+        } catch (IllegalAccessError a) {
             System.out.println(a);
         } finally {
             System.out.println("Мы тут были");

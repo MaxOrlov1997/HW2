@@ -7,21 +7,21 @@ public class Task2 {
     public static void main(String[] args) {
         try {
             f();
-        } catch (Exception a) {
+        } catch (IllegalAccessError a) {
             System.out.println(a);
         }
     }
 
-    private static void f() throws Exception {
+    private static void f() throws IllegalAccessError {
         try {
             g();
-        } catch (Exception e) {
-            throw new Exception(nameTwo);
+        } catch (IllegalAccessError e) {
+            throw new IllegalAccessError(nameTwo);
         }
     }
 
-    private static void g() throws Exception {
-        throw new Exception(name);
+    private static void g() throws IllegalAccessError {
+        throw new IllegalAccessError(name);
     }
 }
 
