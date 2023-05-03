@@ -14,46 +14,35 @@ public class Truck extends Car {
         super();
     }
 
-    public void submergeCargo() {
-        System.out.println("Сколько груза в автомобиле изначально?");
-        Scanner scan = new Scanner(System.in);
-        double cargoOncar = scan.nextDouble();
-        System.out.println("Сколько хотите погрузить?");
-        double cargoIncar = scan.nextDouble();
-        double cargo = cargoIncar + cargoOncar;
-        unloadingCar(cargo);
+    public void submergeCargo(int cargoIncar, int cargoOncar) {
+        cargo = cargoIncar + cargoOncar;
+        if (cargo > 1000) {
+            System.out.println("Не возможно взять больше 1000, необходима разгрузка");
+        } else
+            System.out.println("Груз успешно погружен " + cargo);
     }
 
     @Override
-    public void toMove() {
-        double stat = (this.currentFuel / this.fuelConsumption * 2) * 100;
+    public void move() {
+        double stat = (this.currentFuel / (this.fuelConsumption * 2)) * 100;
+        System.out.println("Автомобиль может проехать " + stat + " км");
         for (int i = 0; currentFuel > 0; i++) {
-            currentFuel = currentFuel - fuelConsumption;
+            currentFuel = currentFuel - (fuelConsumption * 2);
             System.out.println("Можно ехать, топливо есть");
         }
-        System.out.println("Автомобиль может проехать " + stat + " км");
+        currentFuel = 0;
         System.out.println("Топливо закончилось");
+        System.out.println("Желаете заправить после поездки? Yes/No");
+        Scanner scan = new Scanner(System.in);
+        String admin = scan.nextLine();
+        if (admin.equals("Yes")) {
+            refuel();
+        } else System.out.println("Дозаправки не будет");
     }
 
-    public void putPassengerTruck() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Сколько хотите посадить в трак пассажиров?");
-        int newPassenger = scan.nextInt();
-        for (; ; ) {
-            if (newPassenger <= 3) {
-                System.out.println("Посадка успешна, всего сидит " + newPassenger + " пассажиров");
-                break;
-            }
-            System.out.println("Нет посадочных мест, трак может вместить всего 3 пассажиров");
-        }
-    }
-
-    public void unloadingCar(double cargo) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Сколько хотите выгрузить?");
-        double cargoOut = scan.nextDouble();
+    public void unloadingCar(double cargoOut) {
         cargo = cargo - cargoOut;
-        if (cargo <= 0) {
+        if (cargo <= cargoOut) {
             System.out.println("Не возможно выгрузить, нет столько груза");
         }
         System.out.println("Осталось груза в машине - " + cargo);

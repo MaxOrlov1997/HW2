@@ -23,36 +23,37 @@ public class Car implements Recovery {
 
     }
 
-    public void toMove() {
+    public String toString() {
+        String res = ("Модель - " + series + " " + "Год -" + year + " " + "Цвет - " + color + " " +
+                "Количество топлива - " + this.tankSize + " " + "Осталось в баке -" + this.currentFuel + " " +
+                "Потребление топлива - " + fuelConsumption);
+        return res;
+    }
+
+    public void move() {
         double stat = (this.currentFuel / this.fuelConsumption) * 100;
+        System.out.println("Автомобиль может проехать " + stat + " км");
         for (int i = 0; currentFuel > 0; i++) {
             currentFuel = currentFuel - fuelConsumption;
             System.out.println("Можно ехать, топливо есть");
         }
-        System.out.println("Автомобиль может проехать " + stat + " км");
+        currentFuel = 0;
         System.out.println("Топливо закончилось");
-    }
-
-    public void statistics() {
-        double tanksizeNow = 0;
-        System.out.println("После этой поездки бак будет пуст - " + tanksizeNow);
         System.out.println("Желаете заправить после поездки? Yes/No");
         Scanner scan = new Scanner(System.in);
         String admin = scan.nextLine();
         if (admin.equals("Yes")) {
-            refuel(tanksizeNow);
-        }
+            refuel();
+        } else System.out.println("Дозаправки не будет");
     }
 
-    public void refuel(double tanksizeNow) {
-        currentFuel = this.tankSize;
+    public void statistics() {
+        System.out.println("Ёмкость бака " + this.tankSize);
+        System.out.println("Количество топлива в баке " + this.currentFuel);
+    }
+
+    public void refuel() {
+        currentFuel = this.tankSize - this.currentFuel;
         System.out.println("В бак зальют - " + currentFuel);
-    }
-
-    public String toString() {
-        String res = ("Модель - " + series + " " + "Год -" + year + " " + "Цвет - " + color + " " +
-                "Количество топлива - " + this.tankSize + " " + "Осталось в баке -" + currentFuel + " " +
-                "Потребление топлива - " + fuelConsumption);
-        return res;
     }
 }
