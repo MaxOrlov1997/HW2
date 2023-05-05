@@ -1,10 +1,11 @@
 package ua.orlov.hw14;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MySetNoStat<T> {
-    private List<T> list;
+    private static List list;
 
     public MySetNoStat(List<T> list) {
         this.list = list;
@@ -14,16 +15,24 @@ public class MySetNoStat<T> {
         MySetNoStat mySetStat = new MySetNoStat(new ArrayList<>());
         mySetStat.add(12);
         mySetStat.add("Name");
-        System.out.println(mySetStat);
+        System.out.println(mySetStat.list);
+        System.out.println(Arrays.asList(mySetStat.addMas(new Object[]{"5", "Max", 7})));
+        System.out.println(Arrays.asList(list));
+
     }
 
-    private void add(T nam) {
+    private static <T> void add(T nam) {
         list.add(nam);
+    }
+
+    private T[] addMas(T[] array) {
+        list.add((T) array);
+        return array;
     }
 
     @Override
     public String toString() {
-        return "MySetStat{" +
+        return "MySetNoStat{" +
                 "list=" + list +
                 '}';
     }
