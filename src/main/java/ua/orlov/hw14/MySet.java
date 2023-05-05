@@ -10,8 +10,7 @@ public class MySet<T> {
     }
 
     public String toString() {
-        System.out.println(Arrays.toString(generic));
-        return null;
+        return Arrays.toString(generic);
     }
 
     public T[] add(T number) {
@@ -33,6 +32,6 @@ public class MySet<T> {
         MySet<Integer> mySet = new MySet(new Integer[]{3,5,8});
         mySet.add(2);
         System.out.println(mySet.get(0));
-        mySet.toString();
+        System.out.println(mySet.toString());
     }
 }
