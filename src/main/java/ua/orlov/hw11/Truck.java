@@ -14,20 +14,22 @@ public class Truck extends Car {
         super();
     }
 
-    public void submergeCargo(int cargoIncar, int cargoOncar) {
+    public boolean submergeCargo(int cargoIncar, int cargoOncar) {
         cargo = cargoIncar + cargoOncar;
         if (cargo > 1000) {
             System.out.println("Не возможно взять больше 1000, необходима разгрузка");
+            return false;
         } else
             System.out.println("Груз успешно погружен " + cargo);
+        return true;
     }
 
     @Override
     public void move() {
-        double stat = (this.currentFuel / (this.fuelConsumption * 2)) * 100;
+        double stat = getRange();
         System.out.println("Автомобиль может проехать " + stat + " км");
         for (int i = 0; currentFuel > 0; i++) {
-            currentFuel = currentFuel - (fuelConsumption * 2);
+            currentFuel = getCurrentFuelState();
             System.out.println("Можно ехать, топливо есть");
         }
         currentFuel = 0;
@@ -36,8 +38,17 @@ public class Truck extends Car {
         Scanner scan = new Scanner(System.in);
         String admin = scan.nextLine();
         if (admin.equals("Yes")) {
-            refuel();
+            isTankRefuel();
         } else System.out.println("Дозаправки не будет");
+    }
+
+    public double getCurrentFuelState() {
+        return currentFuel - (fuelConsumption * 2);
+    }
+
+    private double getRange() {
+        double stat = (this.currentFuel / (this.fuelConsumption * 2)) * 100;
+        return stat;
     }
 
     public void unloadingCar(double cargoOut) {
