@@ -9,17 +9,13 @@ public class MySet<T> {
         this.generic = generic;
     }
 
-    public MySet() {
-
-    }
-
     public String toString() {
         System.out.println(Arrays.toString(generic));
         return null;
     }
 
-    public <T> T[] add(T number) {
-        T[] gener = Arrays.copyOf((T[]) generic, generic.length + 1);
+    public T[] add(T number) {
+        T[] gener = Arrays.copyOf( generic, generic.length + 1);
         gener[generic.length] = number;
         int size = generic.length;
         boolean a = Arrays.asList(gener).contains(number);
@@ -34,8 +30,7 @@ public class MySet<T> {
     }
 
     public static void main(String[] args) {
-        MySet<Integer> mySet = new MySet();
-        mySet.generic = new Integer[]{3, 5, 8};
+        MySet<Integer> mySet = new MySet(new Integer[]{3,5,8});
         mySet.add(2);
         System.out.println(mySet.get(0));
         mySet.toString();
