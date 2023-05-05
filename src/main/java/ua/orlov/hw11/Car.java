@@ -3,12 +3,12 @@ package ua.orlov.hw11;
 import java.util.Scanner;
 
 public class Car implements Recovery {
-    String series = "Nisan";
-    String year = "2021";
-    String color = "black";
-    double tankSize = 200;
-    double currentFuel = 60;
-    double fuelConsumption = 25;
+    String series;
+    String year;
+    String color;
+    double tankSize;
+    double currentFuel;
+    double fuelConsumption;
 
     public Car(String series, String year, String color, double tankSize, double currentFuel, double fuelConsumption) {
         this.series = series;
@@ -31,10 +31,10 @@ public class Car implements Recovery {
     }
 
     public void move() {
-        double stat = (this.currentFuel / this.fuelConsumption) * 100;
+        double stat = getRange();
         System.out.println("Автомобиль может проехать " + stat + " км");
         for (int i = 0; currentFuel > 0; i++) {
-            currentFuel = currentFuel - fuelConsumption;
+            currentFuel = getCurrentFuelState();
             System.out.println("Можно ехать, топливо есть");
         }
         currentFuel = 0;
@@ -43,8 +43,17 @@ public class Car implements Recovery {
         Scanner scan = new Scanner(System.in);
         String admin = scan.nextLine();
         if (admin.equals("Yes")) {
-            refuel();
+            isTankRefuel();
         } else System.out.println("Дозаправки не будет");
+    }
+
+    public double getCurrentFuelState() {
+        return currentFuel - fuelConsumption;
+    }
+
+    private double getRange() {
+        double stat = (this.currentFuel / this.fuelConsumption) * 100;
+        return stat;
     }
 
     public void statistics() {
@@ -52,8 +61,9 @@ public class Car implements Recovery {
         System.out.println("Количество топлива в баке " + this.currentFuel);
     }
 
-    public void refuel() {
+    public boolean isTankRefuel() {
         currentFuel = this.tankSize - this.currentFuel;
         System.out.println("В бак зальют - " + currentFuel);
+        return true;
     }
 }

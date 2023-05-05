@@ -1,31 +1,33 @@
 package ua.orlov.hw10;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class TestStudentAspirant {
+    double num = 4.5;
 
+    @Test
+    public void testStudent() {
+        Student student = new Student();
+        Assertions.assertEquals(100, student.getScholarship(student.avaregeMark));
+    }
 
     @Test
-    public void testStudent(){
+    public void testStudentinvalid() {
         Student student = new Student();
-        Assertions.assertEquals(100, student.getScholarship(student.avaregeMark) );
+        Assertions.assertEquals(100, student.getScholarship(student.avaregeMark));
     }
+
     @Test
-    public void testStudentinvalid(){
+    public void testStudentMynum() {
         Student student = new Student();
-        Assertions.assertEquals(70, student.getScholarship(student.avaregeMark) );
+        Assertions.assertEquals(80, student.getScholarship(num));
     }
+
     @Test
-    public void testStudentMynum(){
-        Student student = new Student();
-        double num= 4.5;
-        Assertions.assertEquals(70, student.getScholarship(num) );
-    }
-    @Test
-    public void testAspirantMynum(){
+    public void testAspirantMynum() {
         Student student = new Aspirant();
-        double num= 4.5;
-        Assertions.assertEquals(180, student.getScholarship(num) );
+        Assertions.assertEquals(180, student.getScholarship(num));
     }
 }
