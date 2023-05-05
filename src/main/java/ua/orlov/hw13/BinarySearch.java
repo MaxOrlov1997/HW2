@@ -16,9 +16,9 @@ public class BinarySearch {
         return -1;
     }
 
-    int linearSearch(int[] array, int index) {
+    int linearSearch(int[] array, int namber) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == index) {
+            if (array[i] == namber) {
                 return i;
             }
         }
