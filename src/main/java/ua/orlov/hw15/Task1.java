@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class Task1 {
     private static ArrayList<String> list = new ArrayList<>();
 
-    public Task1() {
+    private Task1() {
 
     }
 
