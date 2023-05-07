@@ -29,7 +29,6 @@ public class Box {
         tr.add(new Box(11));
         tr.add(new Box(0));
         System.out.println(tr);
-
     }
 }
 
