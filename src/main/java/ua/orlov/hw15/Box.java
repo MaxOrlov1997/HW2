@@ -37,14 +37,10 @@ class Boxvolume implements Comparator<Box> {
 
         if (a.getAge() == 0)
             return -1;
-        if (b.getAge() == 0)
-            return -1;
         if (a.getAge() > b.getAge())
             return -1;
         if (a.getAge() < b.getAge())
-            return 1;
-        else
-            return 0;
+        return 1;
+        return 0;
     }
 }
-
