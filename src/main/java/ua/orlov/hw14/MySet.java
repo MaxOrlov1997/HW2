@@ -3,34 +3,43 @@ package ua.orlov.hw14;
 import java.util.Arrays;
 
 public class MySet<T> {
-    private T[] generic;
+    Integer size;
+    private T[] generic = (T[]) new Integer[]{3, 4, 5};
 
     public MySet(T[] generic) {
         this.generic = generic;
     }
 
-    public String toString() {
-        return Arrays.toString(generic);
+    public MySet(Integer size) {
+        this.size = size;
     }
 
-    public T[] add(T number) {
-        T[] gener = Arrays.copyOf( generic, generic.length + 1);
-        gener[generic.length] = number;
-        int size = generic.length;
-        boolean a = Arrays.asList(gener).contains(number);
-        System.out.println("Длина - " + size);
-        System.out.println("Наличие элемента - " + a);
-        System.out.println(Arrays.toString(gener));
-        return gener;
+    public MySet() {
+
+    }
+
+    public void add(T number) {
+        for (int i = 0; i < generic.length; i++) {
+            if (generic[i]==number){
+                return;
+            }}
+        if (size > generic.length-1) {
+            generic[generic.length] = number;
+        }
     }
 
     public T get(int index) {
         return generic[index];
     }
+    public String toString() {
+        return Arrays.toString(generic);
+    }
 
     public static void main(String[] args) {
-        MySet<Integer> mySet = new MySet(new Integer[]{3,5,8});
+        MySet<Integer> mySet = new MySet();
+        mySet.size=4;
         mySet.add(2);
+        System.out.println(mySet.generic.length);
         System.out.println(mySet.get(0));
         System.out.println(mySet.toString());
     }

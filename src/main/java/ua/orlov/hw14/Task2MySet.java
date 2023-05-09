@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MySetNoStat<T> {
+public class Task2MySet<T> {
     private static List list;
 
-    public MySetNoStat(List<T> list) {
+    public Task2MySet(List<T> list) {
         this.list = list;
     }
 
     public static void main(String[] args) {
-        MySetNoStat mySetStat = new MySetNoStat(new ArrayList<>());
+        Task2MySet mySetStat = new Task2MySet(new ArrayList<>());
         mySetStat.add(12);
         mySetStat.add("Name");
         System.out.println(mySetStat.list);
