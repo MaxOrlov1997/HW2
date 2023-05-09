@@ -15,13 +15,13 @@ class Exception {
 
     static void throwRandomException() {
         if (test == 1) {
-            throw new IllegalArgumentException("Тут один");
+            throw new NumberFormatException("Тут один");
         }
         if (test == 2) {
-            throw new IllegalArgumentException("Тут два");
+            throw new NumberFormatException("Тут два");
         }
         if (test == 3) {
-            throw new IllegalArgumentException("Тут три");
+            throw new NumberFormatException("Тут три");
         }
     }
 }
