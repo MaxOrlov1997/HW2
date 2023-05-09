@@ -10,7 +10,7 @@ public class Runner {
         System.out.println("Посадка успешна, всего сидит " + passengerCar.putPassenger(3));
         Truck truck = new Truck("Nisan", "2021", "black", 200, 60, 25, 0);
         truck.move();
-        truck.submergeCargo(200, 500);
+        truck.submergeCargo(500);
         truck.unloadingCar(200);
     }
 }
