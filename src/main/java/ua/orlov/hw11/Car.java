@@ -33,13 +33,12 @@ public class Car implements Recovery {
     public void move() {
         double stat = getRange();
         System.out.println("Автомобиль может проехать " + stat + " км");
-        for (int i = 0; currentFuel > 0; i++) {
+        while (currentFuel > 0) {
             currentFuel = getCurrentFuelState();
             System.out.println("Можно ехать, топливо есть");
         }
         currentFuel = 0;
-        System.out.println("Топливо закончилось");
-        System.out.println("Желаете заправить после поездки? Yes/No");
+        System.out.println("Нет топлива");
         Scanner scan = new Scanner(System.in);
         String admin = scan.nextLine();
         if (admin.equals("Yes")) {
@@ -61,9 +60,8 @@ public class Car implements Recovery {
         System.out.println("Количество топлива в баке " + this.currentFuel);
     }
 
-    public boolean isTankRefuel() {
+    public void isTankRefuel() {
         currentFuel = this.tankSize - this.currentFuel;
         System.out.println("В бак зальют - " + currentFuel);
-        return true;
     }
 }
