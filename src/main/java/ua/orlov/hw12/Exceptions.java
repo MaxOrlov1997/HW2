@@ -7,20 +7,21 @@ class Exception {
 
     public static void main(String[] args) {
         try {
-           rundom();
+            throwRandomException();
         } catch (IllegalAccessError a) {
             System.out.println(a);
         }
     }
-    static void rundom(){
+
+    static void throwRandomException() {
         if (test == 1) {
-            FirstExtend.firstExtend();
+            throw new IllegalArgumentException("Тут один");
         }
         if (test == 2) {
-            LastExtend.lastExtend();
+            throw new IllegalArgumentException("Тут два");
         }
         if (test == 3) {
-            SecondExtend.secondExtend();
+            throw new IllegalArgumentException("Тут три");
         }
     }
 }

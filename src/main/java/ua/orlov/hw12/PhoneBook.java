@@ -18,7 +18,7 @@ public class PhoneBook {
         if (res.isPresent()) {
             System.out.println(PHONE_BOOK[res.get()]);
         } else
-        System.out.println("Номер не найден");
+            System.out.println("Номер не найден");
     }
 
     public static Optional<Integer> findIndexByPhoneNumber(String phoneNumber) {
