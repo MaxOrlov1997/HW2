@@ -12,10 +12,10 @@ public class Task1 {
         boolean b = aspirant.equals(student);
         int x = student.hashCode();
         int y = aspirant.hashCode();
-        boolean z = (x==y && y==x);
-        System.out.println(a);
-        System.out.println(b);
+        boolean z = (x == y && y == x);
+        System.out.println("student equals to aspirant: " + a);
+        System.out.println("student equals to aspirant: " + b);
         System.out.println(x + " " + y);
-        System.out.println(z);
+        System.out.println("hashCode student equals hashCode aspirant: " + z);
     }
 }

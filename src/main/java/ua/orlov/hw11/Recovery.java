@@ -2,5 +2,5 @@ package ua.orlov.hw11;
 
 public interface Recovery {
 
-    void isTankRefuel();
+    void refuel();
 }
