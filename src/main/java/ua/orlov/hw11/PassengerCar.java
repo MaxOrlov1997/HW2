@@ -10,10 +10,11 @@ public class PassengerCar extends Car {
 
     }
 
-    public int putPassenger(int passenger) {
+    public void putPassenger(int passengerinCar, int newpassenger) {
         for (; ; ) {
+            int passenger = passengerinCar + newpassenger;
             if (passenger <= 3) {
-                return passenger;
+                System.out.println("В автомобиле сидит " + passenger + " пассажиров");
             }
             System.out.println("Нет посадочных мест, автомобиль может вместить всего 3 пассажиров");
         }

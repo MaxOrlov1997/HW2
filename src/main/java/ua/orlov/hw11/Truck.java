@@ -15,8 +15,11 @@ public class Truck extends Car {
     }
 
     public void submergeCargo(int cargoIncar) {
+        if (cargo != 0) {
+            System.out.println("Груз уже есть в машине");
+        }
         cargo = cargoIncar;
-            System.out.println("Груз успешно погружен " + cargo);
+        System.out.println("Груз успешно погружен " + cargo);
     }
 
     @Override
@@ -29,14 +32,10 @@ public class Truck extends Car {
         }
         currentFuel = 0;
         System.out.println("Нет топлива");
-        Scanner scan = new Scanner(System.in);
-        String admin = scan.nextLine();
-        if (admin.equals("Yes")) {
-            isTankRefuel();
-        } else System.out.println("Дозаправки не будет");
+        refuel();
     }
 
-    public double getCurrentFuelState() {
+    private double getCurrentFuelState() {
         return currentFuel - (fuelConsumption * 2);
     }
 
@@ -45,9 +44,12 @@ public class Truck extends Car {
         return stat;
     }
 
-    public void unloadingCar(double cargoOut) {
-        cargo = cargo - cargoOut;
+    public void unloadingCar() {
+        if (cargo == 0) {
+            System.out.println("Груза в машине нет");
+        }
         System.out.println("Груз в машине " + cargo);
+        cargo = 0;
     }
 }
 

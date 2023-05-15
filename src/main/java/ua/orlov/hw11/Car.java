@@ -1,7 +1,5 @@
 package ua.orlov.hw11;
 
-import java.util.Scanner;
-
 public class Car implements Recovery {
     String series;
     String year;
@@ -39,14 +37,10 @@ public class Car implements Recovery {
         }
         currentFuel = 0;
         System.out.println("Нет топлива");
-        Scanner scan = new Scanner(System.in);
-        String admin = scan.nextLine();
-        if (admin.equals("Yes")) {
-            isTankRefuel();
-        } else System.out.println("Дозаправки не будет");
+        refuel();
     }
 
-    public double getCurrentFuelState() {
+    private double getCurrentFuelState() {
         return currentFuel - fuelConsumption;
     }
 
@@ -55,13 +49,12 @@ public class Car implements Recovery {
         return stat;
     }
 
-    public void statistics() {
+    public void printStatistics() {
         System.out.println("Ёмкость бака " + this.tankSize);
         System.out.println("Количество топлива в баке " + this.currentFuel);
     }
 
-    public void isTankRefuel() {
-        currentFuel = this.tankSize - this.currentFuel;
-        System.out.println("В бак зальют - " + currentFuel);
+    public void refuel() {
+        currentFuel = this.tankSize;
     }
 }
