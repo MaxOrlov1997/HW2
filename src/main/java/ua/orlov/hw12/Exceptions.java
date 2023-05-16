@@ -1,30 +1,27 @@
 package ua.orlov.hw12;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.SocketException;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Exception extends Throwable {
-    static int test = ThreadLocalRandom.current().nextInt(1, 4);
 
     public static void main(String[] args) {
         try {
-            throwRandomException();
-        } catch (RuntimeException a) {
-            System.out.println(a);
+            exceptionAll();
+        } catch (FirstException | LastException | SecondException exceptionMetod) {
+            System.out.println(exceptionMetod);
         }
     }
 
-    static void throwRandomException() {
-        if (test == 1) {
-            throw new NumberFormatException("Тут один");
+    public static void exceptionAll() throws FirstException, LastException, SecondException {
+        int random = ThreadLocalRandom.current().nextInt(1, 4);
+        if (random == 1) {
+            throw new FirstException();
         }
-        if (test == 2) {
-            throw new IllegalArgumentException("Тут два");
+        if (random == 2) {
+            throw new SecondException();
         }
-        if (test == 3) {
-            throw new IndexOutOfBoundsException("Тут три");
+        if (random == 3) {
+            throw new LastException();
         }
     }
 }
