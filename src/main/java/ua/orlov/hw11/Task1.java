@@ -14,7 +14,7 @@ public class Task1 {
         int y = aspirant.hashCode();
         boolean z = (x == y && y == x);
         System.out.println("student equals to aspirant: " + a);
-        System.out.println("student equals to aspirant: " + b);
+        System.out.println("aspirant equals to student: " + b);
         System.out.println(x + " " + y);
         System.out.println("hashCode student equals hashCode aspirant: " + z);
     }

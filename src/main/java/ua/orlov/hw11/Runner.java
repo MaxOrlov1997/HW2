@@ -7,7 +7,7 @@ public class Runner {
         System.out.println(car.toString());
         car.printStatistics();
         PassengerCar passengerCar = new PassengerCar();
-        passengerCar.putPassenger(1, 3);
+        passengerCar.putPassenger();
         Truck truck = new Truck("Nisan", "2021", "black", 200, 60, 25, 0);
         truck.move();
         truck.submergeCargo(500);
