@@ -1,0 +1,6 @@
+package ua.orlov.hw11;
+
+public interface Recovery {
+
+    void refuil(double tanksizeNow);
+}
