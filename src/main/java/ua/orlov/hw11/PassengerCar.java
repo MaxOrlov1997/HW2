@@ -1,7 +1,7 @@
 package ua.orlov.hw11;
 
 public class PassengerCar extends Car {
-    int passengerinCar = 2;
+    int passengerInCar = 2;
 
     public PassengerCar(String series, String year, String color, double tankSize, double currentFuel, double fuelConsumption) {
         super(series, year, color, tankSize, currentFuel, fuelConsumption);
@@ -12,9 +12,10 @@ public class PassengerCar extends Car {
     }
 
     public void putPassenger() {
-        int passenger = passengerinCar + 1;
+        int passenger = passengerInCar + 1;
         if (passenger <= 3) {
-            System.out.println("В автомобиле сидит " + passenger + " пассажиров");
+            passengerInCar=passenger;
+            System.out.println("В автомобиле сидит " + passengerInCar + " пассажиров");
         } else {
             System.out.println("Нет посадочных мест, автомобиль может вместить всего 3 пассажиров");
         }
