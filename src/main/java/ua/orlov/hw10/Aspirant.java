@@ -1,19 +1,19 @@
 package ua.orlov.hw10;
 
-import java.util.Objects;
-
 public class Aspirant extends Student {
-String work = "Scientific work";
+    String work = "Work IT";
 
-    @Override
-    public String toString() {
-        return "Aspirant{" +
-                "work='" + work + '\'' +
-                '}';
+    public Aspirant(String firstName, String lastName, String group, double avaregeMark, String work) {
+        super(firstName, lastName, group, avaregeMark);
+        this.work = work;
+    }
+
+    public Aspirant() {
+
     }
 
     @Override
-    public double getScholarship(double avaregeMark) {
+    public double getScholarship() {
         if (avaregeMark == 5) {
             return 200;
         } else {
@@ -21,21 +21,7 @@ String work = "Scientific work";
         }
     }
 
-    public void scientificWork() {
-        System.out.println(work);;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Aspirant aspirant = (Aspirant) o;
-        return work.equals(aspirant.work);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), work);
+    public String getScientificWork() {
+        return work;
     }
 }
