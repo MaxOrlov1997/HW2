@@ -4,35 +4,33 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Task1 {
-    private static ArrayList<String> list = new ArrayList<>();
-
     private Task1() {
 
     }
 
     public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
         list.add("Max");
         list.add("Orlov");
-        Task1 task1 = new Task1();
-        task1.cycleFor();
-        task1.cycleForeach();
-        task1.cycleWhile();
-        task1.cycleIterator();
+        printUsingForCycle(list);
+        printUsingForeachCycle(list);
+        printUsingWhileCycle(list);
+        printUsingIteratorCycle(list);
     }
 
-    private void cycleFor() {
+    public static void printUsingForCycle(ArrayList<String> list) {
         for (Integer i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
     }
 
-    private void cycleForeach() {
+    public static void printUsingForeachCycle(ArrayList<String> list) {
         for (String i : list) {
             System.out.println(i);
         }
     }
 
-    private void cycleWhile() {
+    public static void printUsingWhileCycle(ArrayList<String> list) {
         int n = 0;
         while (list.size() > n) {
             System.out.println(list.get(n));
@@ -40,7 +38,7 @@ public class Task1 {
         }
     }
 
-    private void cycleIterator() {
+    public static void printUsingIteratorCycle(ArrayList<String> list) {
         Iterator<String> it = list.iterator();
         while (it.hasNext())
             System.out.println(it.next());

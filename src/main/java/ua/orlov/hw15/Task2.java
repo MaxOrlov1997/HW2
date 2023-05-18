@@ -5,33 +5,33 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Task2 {
-    private static List<Integer> numbers = new ArrayList<>();
 
     public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
         numbers.add(12);
         numbers.add(55);
         numbers.add(22);
         numbers.add(77);
         numbers.add(99);
-        System.out.println("Сумма элементов " + getSum());
-        System.out.println("Список нечетных чисел " + getOddNumber());
-        System.out.println("Новый список строк " + convertToStringList());
-        System.out.println("Дублирует строки " + doubling());
+        System.out.println("Сумма элементов " + getSum(numbers));
+        System.out.println("Список нечетных чисел " + getOddNumber(numbers));
+        System.out.println("Новый список строк " + convertToStringList(numbers));
+        System.out.println("Дублирует строки " + doubling(numbers));
     }
 
-    private static Integer getSum() {
+    public static Integer getSum(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return null;
+            return 0;
         }
-        Integer m = 0;
+        int sumElementNumbers = 0;
         Iterator<Integer> it = numbers.iterator();
         while (it.hasNext()) {
-            m += it.next();
+            sumElementNumbers += it.next();
         }
-        return m;
+        return sumElementNumbers;
     }
 
-    private static List<Integer> getOddNumber() {
+    public static List<Integer> getOddNumber(List<Integer> numbers) {
         if (numbers.isEmpty()) {
             return null;
         }
@@ -47,9 +47,9 @@ public class Task2 {
         return num;
     }
 
-    private static List<String> convertToStringList() {
+    public static List<String> convertToStringList(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return null;
+            return new ArrayList<>();
         }
         List<String> strings = new ArrayList<>();
         Iterator<Integer> it = numbers.iterator();
@@ -59,15 +59,15 @@ public class Task2 {
         return strings;
     }
 
-    private static List<String> doubling() {
+    public static List<String> doubling(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return null;
+            return new ArrayList<>();
         }
         List<String> doubl = new ArrayList<>();
         Iterator<Integer> it = numbers.iterator();
         while (it.hasNext()) {
-            String now = String.valueOf(it.next());
-            doubl.add(now + now);
+            String copyOfNumbers = String.valueOf(it.next());
+            doubl.add(copyOfNumbers + copyOfNumbers);
         }
         return doubl;
     }
