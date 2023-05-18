@@ -2,14 +2,15 @@ package ua.orlov.hw11;
 
 public class Runner {
     public static void main(String[] args) {
-        Car car = new Car();
-        System.out.println(car.muving());
-        System.out.println(car.statistics());
-        System.out.println(car.res());
+        Car car = new Car("Nisan", "2021", "black", 200, 60, 25);
+        car.move();
+        System.out.println(car.toString());
+        car.printStatistics();
         PassengerCar passengerCar = new PassengerCar();
-        System.out.println("Количесвто пасажиров в машине - " + passengerCar.putPassenger());
-        Truck truck = new Truck();
-        System.out.println("Груз в машине - " + truck.submergeCargo());
-        System.out.println(truck.muving());
+        passengerCar.putPassenger();
+        Truck truck = new Truck("Nisan", "2021", "black", 200, 60, 25, 0);
+        truck.move();
+        truck.submergeCargo(500);
+        truck.unloadingCar();
     }
 }

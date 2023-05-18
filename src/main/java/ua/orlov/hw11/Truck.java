@@ -1,11 +1,9 @@
 package ua.orlov.hw11;
 
-import java.util.Scanner;
-
-public class Truck extends Car{
+public class Truck extends Car {
     double cargo;
 
-    public Truck(String series, String year, String color, double tankSize, String currentFuel, double fuelConsumption, double cargo) {
+    public Truck(String series, String year, String color, double tankSize, double currentFuel, double fuelConsumption, double cargo) {
         super(series, year, color, tankSize, currentFuel, fuelConsumption);
         this.cargo = cargo;
     }
@@ -14,28 +12,43 @@ public class Truck extends Car{
         super();
     }
 
-    public double submergeCargo(){
-        System.out.println("Сколько груза в автомобиле изначально?");
-        Scanner scan = new Scanner(System.in);
-        double cargoOncar=scan.nextDouble();
-        System.out.println("Сколько хотите погрузить?");
-        double cargoIncar = scan.nextDouble();
-        System.out.println("Сколько хотите выгрузить?");
-        double cargoOut= scan.nextDouble();
-        cargo = cargoOncar + cargoIncar - cargoOut;
-        if (cargo<=0){
-            System.out.println("Не возможно выгрузить, нет столько груза");
-            return 0;
+    public void submergeCargo(int cargoIncar) {
+        if (cargo != 0) {
+            System.out.println("Груз уже есть в машине");
+        } else {
+            cargo = cargoIncar;
+            System.out.println("Груз успешно погружен " + cargo);
         }
-        return cargo;
     }
+
     @Override
-    public String muving(){
-       double tanksizeIncar=this.tankSize/(fuelConsumption * 2);
-        if(tanksizeIncar == 0 ){
-            System.out.println("Нет топлива");
-            return "";
+    public void move() {
+        double stat = getRange();
+        System.out.println("Автомобиль может проехать " + stat + " км");
+        while (currentFuel > 0) {
+            currentFuel = getCurrentFuelState();
+            System.out.println("Можно ехать, топливо есть");
         }
-        return "Можно ехать";
+        currentFuel = 0;
+        System.out.println("Нет топлива");
+    }
+
+    private double getCurrentFuelState() {
+        return currentFuel - (fuelConsumption * 2);
+    }
+
+    private double getRange() {
+        double stat = (this.currentFuel / (this.fuelConsumption * 2)) * 100;
+        return stat;
+    }
+
+    public void unloadingCar() {
+        if (cargo == 0) {
+            System.out.println("Груза в машине нет");
+        } else {
+            System.out.println("Груз в машине " + cargo);
+            cargo = 0;
+        }
     }
 }
+
