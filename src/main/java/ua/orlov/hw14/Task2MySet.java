@@ -9,17 +9,17 @@ public class Task2MySet<T> {
     }
 
     public static void main(String[] args) {
-        add(12);
-        add("Name");
+        addValueAnyType(12);
+        addValueAnyType("Name");
         Task2MySet task2MySet = new Task2MySet();
-        task2MySet.addMas(new Object[]{2, "Name", 4.5});
+        task2MySet.addArrayAnyType(new Object[]{2, "Name", 4.5});
     }
 
-    private static <T> void add(T nam) {
+    public static <T> void addValueAnyType(T nam) {
         System.out.println(nam);
     }
 
-    private void addMas(T[] array) {
+    public void addArrayAnyType(T[] array) {
         System.out.println(Arrays.toString(array));
     }
 }
