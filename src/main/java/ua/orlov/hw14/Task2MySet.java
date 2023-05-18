@@ -12,7 +12,7 @@ public class Task2MySet<T> {
         addValueAnyType(12);
         addValueAnyType("Name");
         Task2MySet task2MySet = new Task2MySet();
-        task2MySet.addArrayAnyType(new Object[]{2, "Name", 4.5});
+        task2MySet.addArrayAnyType(new String[]{"Surname", "Name"});
     }
 
     public static <T> void addValueAnyType(T nam) {
