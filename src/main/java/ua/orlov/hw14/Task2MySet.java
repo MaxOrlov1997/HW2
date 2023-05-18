@@ -19,8 +19,7 @@ public class Task2MySet<T> {
         System.out.println(nam);
     }
 
-    private T[] addMas(T[] array) {
+    private void addMas(T[] array) {
         System.out.println(Arrays.toString(array));
-        return null;
     }
 }
