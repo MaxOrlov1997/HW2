@@ -9,47 +9,37 @@ c. Применить фильтр к коллекции коробок по р�
 d. У оставшихся коробок взять коллекции Item
 e. Отсортировать по цене
 f. Вывести цены в консоль*/
+
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 public class Box {
 
     static int size = 10;
-     static ArrayList box = new ArrayList();
 
     public static void main(String[] args) {
-        Item item = new Item();
+        ArrayList box = new ArrayList();
         for (int i = 0; i < size; i++) {
+            Item item = new Item();
             box.add(item);
         }
         System.out.println(box.stream().
-            filter(it -> isSuitable().equals(true)).
-            flatMap(it->new ArrayList<>()).
-            sorted().collect(Collectors.toList()));
-
+                filter(it -> isSuitable(box) == true).
+                //flatMap(it -> new ArrayList<>()). тут не совсем понимаю зачем нам нужен новый стрим
+                        sorted(new ItemComparator()).
+                collect(Collectors.toList()));
     }
-    private static Boolean isSuitable(){
-       if(box.size()<=size)
-       {return !box.isEmpty();}
-       else return false;
+
+    private static Boolean isSuitable(ArrayList box) {
+        if (box.size() <= size) {
+            return !box.isEmpty();
+        } else return false;
     }
 }
-//class BoxComparator implements Comparator{
-//    public double compare(Item.cost a, Item.cost b){
-//
-//    }
-//}
-class Item{
-    String name = "Apple";
-    Double cost = ThreadLocalRandom.current().nextDouble(1,10);
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "name='" + name + '\'' +
-                ", cost=" + cost +
-                '}';
+class ItemComparator implements Comparator<Item> {
+    public int compare(Item a, Item b) {
+        return Double.compare(a.cost, b.cost);
     }
 }
