@@ -10,11 +10,13 @@ d. У оставшихся коробок взять коллекции Item
 e. Отсортировать по цене
 f. Вывести цены в консоль*/
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 public class Box {
-   static int size = 10;
+
+    static int size = 10;
      static ArrayList box = new ArrayList();
 
     public static void main(String[] args) {
@@ -22,11 +24,10 @@ public class Box {
         for (int i = 0; i < size; i++) {
             box.add(item);
         }
-//    box.stream().
-//            filter(it -> true==isSuitable()).
-//            collect(Collectors.toCollection(Item ))
-
-
+        System.out.println(box.stream().
+            filter(it -> isSuitable().equals(true)).
+            flatMap(it->new ArrayList<>()).
+            sorted().collect(Collectors.toList()));
 
     }
     private static Boolean isSuitable(){
@@ -35,6 +36,11 @@ public class Box {
        else return false;
     }
 }
+//class BoxComparator implements Comparator{
+//    public double compare(Item.cost a, Item.cost b){
+//
+//    }
+//}
 class Item{
     String name = "Apple";
     Double cost = ThreadLocalRandom.current().nextDouble(1,10);
