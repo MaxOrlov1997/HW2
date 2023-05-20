@@ -36,6 +36,6 @@ class BoxVolume implements Comparator<BoxVolumeComparator> {
     public int compare(BoxVolumeComparator a, BoxVolumeComparator b) {
         if (a.getVolume() == 0)
             return -1;
-        return Integer.compare((int) b.getVolume(), (int) a.getVolume());
+        return Double.compare(b.getVolume(), a.getVolume());
     }
 }

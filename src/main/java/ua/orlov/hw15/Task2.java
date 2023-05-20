@@ -1,6 +1,7 @@
 package ua.orlov.hw15;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,15 +34,15 @@ public class Task2 {
 
     public static List<Integer> getOddNumber(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return null;
+            return Collections.emptyList();
         }
         List<Integer> num = new ArrayList<>();
-        Integer m = 0;
+        Integer listOddNumbers = 0;
         Iterator<Integer> it = numbers.iterator();
         while (it.hasNext()) {
-            m = it.next();
-            if (m % 2 != 0) {
-                num.add(m);
+            listOddNumbers = it.next();
+            if (listOddNumbers % 2 != 0) {
+                num.add(listOddNumbers);
             }
         }
         return num;
@@ -49,7 +50,7 @@ public class Task2 {
 
     public static List<String> convertToStringList(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return new ArrayList<>();
+            return Collections.emptyList();
         }
         List<String> strings = new ArrayList<>();
         Iterator<Integer> it = numbers.iterator();
@@ -61,7 +62,7 @@ public class Task2 {
 
     public static List<String> doubling(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return new ArrayList<>();
+            return Collections.emptyList();
         }
         List<String> doubl = new ArrayList<>();
         Iterator<Integer> it = numbers.iterator();
