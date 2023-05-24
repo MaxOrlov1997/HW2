@@ -15,7 +15,7 @@ public class TestTask2 {
         list.add("Там");
         list.add("Стол");
         list.add("Сто");
-        Assertions.assertNotNull(task2.newMap(list));
+        Assertions.assertEquals("{3=[Тут, Там, Сто], 4=[Стол]}", Task2.newMap(list).toString());
     }
 
     @Test
@@ -25,6 +25,6 @@ public class TestTask2 {
         list.add("Java");
         list.add("Onl");
         list.add("Six");
-        Assertions.assertEquals("{Java=4, Onl=3, Six=3}", Task2.newMap(list).toString());
+        Assertions.assertEquals("{3=[Onl, Six], 4=[Java]}", Task2.newMap(list).toString());
     }
 }
