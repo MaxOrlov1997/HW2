@@ -37,12 +37,12 @@ public class Task2 {
             return Collections.emptyList();
         }
         List<Integer> num = new ArrayList<>();
-        Integer listOddNumbers = 0;
         Iterator<Integer> it = numbers.iterator();
         while (it.hasNext()) {
-            listOddNumbers = it.next();
-            if (listOddNumbers % 2 != 0) {
-                num.add(listOddNumbers);
+            Integer OddNumbers = 0;
+            OddNumbers = it.next();
+            if (OddNumbers % 2 != 0) {
+                num.add(OddNumbers);
             }
         }
         return num;
