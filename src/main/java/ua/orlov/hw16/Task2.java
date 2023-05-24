@@ -14,7 +14,7 @@ public class Task2 {
         Map<Integer, List<String>> map = new HashMap<>();
         for (String s : list) {
              if (map.containsKey(s.length())) {
-             map.get(s.length()).add(s);}
+                 map.get(s.length()).add(s);}
              else {
                  map.put(s.length(), List.of(s));
              }
