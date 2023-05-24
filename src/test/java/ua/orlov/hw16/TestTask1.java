@@ -13,7 +13,7 @@ public class TestTask1 {
         list.add("Java");
         list.add("Onl");
         list.add("Six");
-        Assertions.assertNotNull(task1.newMap(list));
+        Assertions.assertEquals("{Java=4, Onl=3, Six=3}",task1.newMap(list).toString());
     }
 
     @Test
@@ -23,6 +23,6 @@ public class TestTask1 {
         list.add("Тут");
         list.add("Там");
         list.add("Стол");
-        Assertions.assertNotNull(task1.newMap(list));
+        Assertions.assertEquals("{Тут=3, Там=3, Стол=4}",task1.newMap(list).toString());
     }
 }

@@ -7,15 +7,15 @@ package ua.orlov.hw16;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Task1 {
-    public static Map newMap(ArrayList<String> list) {
+    public static Map newMap(List<String> list) {
         Map<String, Integer> map = new LinkedHashMap<>();
-        for (int i = 0; i < list.size(); i++) {
-            map.put(list.get(i), list.get(i).length());
+        for (String s : list) {
+            map.put(s, s.length());
         }
-        System.out.println(map);
         return map;
     }
 }
