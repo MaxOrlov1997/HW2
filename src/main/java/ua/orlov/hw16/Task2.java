@@ -13,13 +13,14 @@ public class Task2 {
     public static Map newMap(ArrayList<String> list) {
         Map<Integer, List<String>> map = new HashMap<>();
         for (String s : list) {
+            int num = 0;
              if (map.containsKey(s.length())) {
-            map.put(s.length(), map.get(s.length())).add(s);}
-             else {
-  //               map.put(s.length(),list.);
+       //     map.put(s.length(), map.get(s.length()).add(s));}
+     //        else {
+                 map.put(s.length(), Collections.singletonList(list.get(num)));
              }
-            System.out.println(map);
         }
+        System.out.println(map);
         return map;
     }
 }
