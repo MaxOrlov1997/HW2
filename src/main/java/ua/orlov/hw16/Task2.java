@@ -10,14 +10,13 @@ import java.util.*;
 
 public class Task2 {
 
-    public static Map newMap(ArrayList<String> list) {
+    public static Map<Integer, List<String>> newMap(ArrayList<String> list) {
         Map<Integer, List<String>> map = new HashMap<>();
         for (String s : list) {
-            int num = 0;
              if (map.containsKey(s.length())) {
-       //     map.put(s.length(), map.get(s.length()).add(s));}
-     //        else {
-                 map.put(s.length(), Collections.singletonList(list.get(num)));
+             map.get(s.length()).add(s);}
+             else {
+                 map.put(s.length(), List.of(s));
              }
         }
         System.out.println(map);
