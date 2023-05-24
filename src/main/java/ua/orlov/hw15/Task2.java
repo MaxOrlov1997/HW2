@@ -39,10 +39,9 @@ public class Task2 {
         List<Integer> num = new ArrayList<>();
         Iterator<Integer> it = numbers.iterator();
         while (it.hasNext()) {
-            Integer OddNumbers = 0;
-            OddNumbers = it.next();
-            if (OddNumbers % 2 != 0) {
-                num.add(OddNumbers);
+            int oddNumbers = it.next();
+            if (oddNumbers % 2 != 0) {
+                num.add(oddNumbers);
             }
         }
         return num;
