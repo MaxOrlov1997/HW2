@@ -6,22 +6,21 @@ package ua.orlov.hw16;
 Пример:
 [“тут”, “там”, “стол”] ->[ {3, [“тут”, “там”]}, {4, [“стол”]}]*/
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Task2 {
 
     public static Map newMap(ArrayList<String> list) {
-        Map<Integer, String> map = new LinkedHashMap<>();
-        for (int i = 0; i < list.size(); i++) {
-            if (map.containsKey(list.get(i).length()) == true) {
-                map.put(list.get(i).length(), map.get(list.get(i).length()) + " " + list.get(i));
-                continue;
-            }
-            map.put(list.get(i).length(), list.get(i));
+        Map<Integer, List<String>> map = new HashMap<>();
+        for (String s : list) {
+             if (map.containsKey(s.length())) {
+            map.put(s.length(), map.get(s.length())).add(s);}
+             else {
+  //               map.put(s.length(),list.);
+             }
+            System.out.println(map);
         }
-        System.out.println(map);
         return map;
     }
 }
+

@@ -25,6 +25,6 @@ public class TestTask2 {
         list.add("Java");
         list.add("Onl");
         list.add("Six");
-        Assertions.assertNotNull(task2.newMap(list));
+        Assertions.assertEquals("{Java=4, Onl=3, Six=3}", Task2.newMap(list).toString());
     }
 }
