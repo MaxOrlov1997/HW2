@@ -5,18 +5,18 @@ package ua.orlov.hw16;
 Пример:
 [“тут”, “там”, “стол”] ->[ {“тут”, 3}, {“там”, 3}, {“стол”, 4}]*/
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Task1 {
     public static Map newMap(List<String> list) {
-        Map<String, Integer> map = new LinkedHashMap<>();
+        Map<String, Integer> result = new HashMap<>();
         for (String s : list) {
-            map.put(s, s.length());
+            result.put(s, s.length());
         }
-        return map;
+        return result;
     }
 }
 

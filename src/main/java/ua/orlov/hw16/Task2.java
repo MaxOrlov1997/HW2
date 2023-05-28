@@ -11,17 +11,17 @@ import java.util.*;
 public class Task2 {
 
     public static Map<Integer, List<String>> newMap(ArrayList<String> list) {
-        Map<Integer, List<String>> map = new HashMap<>();
+        Map<Integer, List<String>> result = new HashMap<>();
         for (String s : list) {
-            if (map.containsKey(s.length())) {
-                map.get(s.length()).add(s);
+            if (result.containsKey(s.length())) {
+                result.get(s.length()).add(s);
             } else {
                 List<String> list1 = new ArrayList<>();
                 list1.add(s);
-                map.put(s.length(), list1);
+                result.put(s.length(), list1);
             }
         }
-        return map;
+        return result;
     }
 }
 

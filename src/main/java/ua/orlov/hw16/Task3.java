@@ -5,26 +5,27 @@ package ua.orlov.hw16;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Task3 {
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        LinkedList<Integer> st = new LinkedList<>();
-        completionList(list, st);
-        checkList(list, st);
+        List<Integer> list = new ArrayList<>();
+        List<Integer> st = new LinkedList<>();
+        completionList(list);
+        completionList(st);
+        checkList(list);
+        checkList(st);
     }
 
-    private static void completionList(ArrayList list, LinkedList st) {
+    private static void completionList(List<Integer> list) {
         for (int i = 0; i < 999999; i++) {
-            int x = ThreadLocalRandom.current().nextInt(0, 999999);
-            list.add(x);
-            st.add(x);
+            list.add(ThreadLocalRandom.current().nextInt(0, 999999));
         }
     }
 
-    private static void checkList(ArrayList list, LinkedList st) {
+    private static void checkList(List<Integer> list) {
         long startList = System.currentTimeMillis();
         for (int i = 0; i < 999999; i++) {
             list.get(ThreadLocalRandom.current().nextInt(0, list.size()));
@@ -32,12 +33,5 @@ public class Task3 {
         long finishList = System.currentTimeMillis();
         long allList = finishList - startList;
         System.out.println(allList);
-        long startSt = System.currentTimeMillis();
-        for (int i = 0; i < 999999; i++) {
-            st.get(ThreadLocalRandom.current().nextInt(0, st.size()));
-        }
-        long finishSt = System.currentTimeMillis();
-        long allSt = finishSt - startSt;
-        System.out.println(allSt);
     }
 }
