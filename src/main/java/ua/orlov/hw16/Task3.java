@@ -26,12 +26,12 @@ public class Task3 {
     }
 
     private static void checkList(List<Integer> list) {
-        long startList = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         for (int i = 0; i < 999999; i++) {
             list.get(ThreadLocalRandom.current().nextInt(0, list.size()));
         }
-        long finishList = System.currentTimeMillis();
-        long allList = finishList - startList;
-        System.out.println(allList);
+        long finishTime = System.currentTimeMillis();
+        long duration = finishTime - startTime;
+        System.out.println(duration);
     }
 }
