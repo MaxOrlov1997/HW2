@@ -8,16 +8,17 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Task2 {
 
     public static void main(String[] args) {
-        IntSummaryStatistics stat = numbers().stream().mapToInt(Integer::intValue).summaryStatistics();
-        System.out.println(stat);
+        System.out.println(fillArray().stream().
+                filter(it -> it >= 0).toList().
+                stream().mapToInt(Integer::intValue).
+                summaryStatistics());
     }
 
-    private static List<Integer> numbers() {
+    public static List<Integer> fillArray() {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             list.add(ThreadLocalRandom.current().nextInt(-20, 20));
-            System.out.println(list.get(i));
         }
-        return list.stream().filter(it -> it >= 0).toList();
+        return list;
     }
 }

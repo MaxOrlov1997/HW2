@@ -6,15 +6,15 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Task4 {
     public static void main(String[] args) {
-        System.out.println(minNum());
+
+        System.out.println(fillArrayList().stream().reduce(Integer::min).get());
     }
 
-    private static Integer minNum() {
+    private static List<Integer> fillArrayList() {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             list.add(ThreadLocalRandom.current().nextInt(0, 10));
-            System.out.println(list.get(i));
         }
-        return list.stream().reduce(Integer::min).get();
+        return list;
     }
 }
