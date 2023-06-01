@@ -12,6 +12,7 @@ f. Вывести цены в консоль*/
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Box {
@@ -19,21 +20,21 @@ public class Box {
     static int size = 10;
 
     public static void main(String[] args) {
-        ArrayList box = new ArrayList();
+        List box = new ArrayList();
         for (int i = 0; i < size; i++) {
             Item item = new Item();
             box.add(item);
         }
-        System.out.println(box.stream().
-                filter(it -> isSuitable(box) == true).
-                //flatMap(it -> new ArrayList<>()). тут не совсем понимаю зачем нам нужен новый стрим
-                        sorted(new ItemComparator()).
-                collect(Collectors.toList()));
+//        System.out.println(box.stream().
+//                filter(it -> isSuitable(box.size()) == true).
+//                //flatMap(it -> new ArrayList<>()). тут не совсем понимаю зачем нам нужен новый стрим
+//                        sorted(new ItemComparator()).
+//                collect(Collectors.toList()));
     }
 
-    private static Boolean isSuitable(ArrayList box) {
-        if (box.size() <= size) {
-            return !box.isEmpty();
+   public  Boolean isSuitable(int boxSize) {
+        if (boxSize <= size) {
+            return true;
         } else return false;
     }
 }
