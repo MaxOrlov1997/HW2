@@ -13,16 +13,18 @@ f. Вывести цены в консоль*/
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 public class Box {
 
-    static int size = 10;
+    static int size = ThreadLocalRandom.current().nextInt(0, 10);
+    static Box <List<String>> listBox>;
 
     public static void main(String[] args) {
         List box = new ArrayList();
         for (int i = 0; i < size; i++) {
-            Item item = new Item();
+            Item item = new Item("Apple" , 12.2);
             box.add(item);
         }
 //        System.out.println(box.stream().

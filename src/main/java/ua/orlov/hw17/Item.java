@@ -3,8 +3,13 @@ package ua.orlov.hw17;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Item {
-    String name = "Apple";
-    Double cost = ThreadLocalRandom.current().nextDouble(1,10);
+    String name;
+    Double cost;
+
+    public Item(String name, Double cost) {
+        this.name = name;
+        this.cost = cost;
+    }
 
     @Override
     public String toString() {
