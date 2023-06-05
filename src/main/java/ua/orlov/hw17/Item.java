@@ -1,14 +1,16 @@
 package ua.orlov.hw17;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Item {
     String name;
-    Double cost;
+    int cost;
 
-    public Item(String name, Double cost) {
+    public Item(String name, int cost) {
         this.name = name;
         this.cost = cost;
+    }
+
+    public int getCost() {
+        return cost;
     }
 
     @Override

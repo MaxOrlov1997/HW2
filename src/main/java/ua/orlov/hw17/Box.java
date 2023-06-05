@@ -11,38 +11,28 @@ e. Отсортировать по цене
 f. Вывести цены в консоль*/
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
 
 public class Box {
 
-    static int size = ThreadLocalRandom.current().nextInt(0, 10);
-    static Box <List<String>> listBox>;
+    int size;
+    List<Item> listItem;
 
-    public static void main(String[] args) {
-        List box = new ArrayList();
-        for (int i = 0; i < size; i++) {
-            Item item = new Item("Apple" , 12.2);
-            box.add(item);
-        }
-//        System.out.println(box.stream().
-//                filter(it -> isSuitable(box.size()) == true).
-//                //flatMap(it -> new ArrayList<>()). тут не совсем понимаю зачем нам нужен новый стрим
-//                        sorted(new ItemComparator()).
-//                collect(Collectors.toList()));
+    public Box(int size) {
+        this.size = size;
+        this.listItem = new ArrayList<>();
     }
 
-   public  Boolean isSuitable(int boxSize) {
-        if (boxSize <= size) {
-            return true;
-        } else return false;
+    public void addItem(Item item) {
+        listItem.add(item);
+    }
+
+    public List<Item> getListItem() {
+        return listItem;
+    }
+
+    public Boolean isSuitable(int boxSize) {
+        return boxSize <= size;
     }
 }
 
-class ItemComparator implements Comparator<Item> {
-    public int compare(Item a, Item b) {
-        return Double.compare(a.cost, b.cost);
-    }
-}
