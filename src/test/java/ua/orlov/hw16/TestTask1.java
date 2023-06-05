@@ -13,7 +13,7 @@ public class TestTask1 {
         list.add("Java");
         list.add("Onl");
         list.add("Six");
-        Assertions.assertEquals("{Java=4, Onl=3, Six=3}",task1.newMap(list).toString());
+        Assertions.assertEquals("{Java=4, Six=3, Onl=3}",task1.newMap(list).toString());
     }
 
     @Test
