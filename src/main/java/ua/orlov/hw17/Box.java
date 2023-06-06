@@ -15,8 +15,8 @@ import java.util.List;
 
 public class Box {
 
-    int size;
-    List<Item> listItem;
+   private int size;
+   private List<Item> listItem;
 
     public Box(int size) {
         this.size = size;

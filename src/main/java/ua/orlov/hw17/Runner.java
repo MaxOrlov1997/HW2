@@ -22,11 +22,11 @@ public class Runner {
             box.addItem(new Item("Last", 13));
             boxlist.add(box);
         }
-        List<Box> boxSize = boxlist.stream().filter(it -> it.isSuitable(minSizeLimit)).toList();
-        List<Item> allItem = new ArrayList<>(boxSize.stream().flatMap(it -> it.getListItem().stream()).toList());
-        allItem.sort(Comparator.comparingInt(Item::getCost));
-
-        allItem.forEach(it -> System.out.println(it.getCost()));
+        boxlist.stream().filter(it -> it.isSuitable(minSizeLimit))
+                .flatMap(it -> it.getListItem()
+                        .stream())
+                .sorted(Comparator.comparingInt(Item::getCost))
+                .forEach(it -> System.out.println(it.getCost()));
     }
 }
 
