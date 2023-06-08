@@ -12,9 +12,9 @@ public class AnnotationAnalyzer {
    static Map<String, Object> objClass = new HashMap<>();
     static int valueTest;
     public static void main(String[] args) throws Exception {
-        pars(Value.class);
-        scanClass("SomeClass");
-        scanClass("ExtendSomeClass");
+       // pars(Value.class);
+        scanClass("D:\\проекты\\src\\main\\java\\ua\\orlov\\hw21\\SomeClass");
+        scanClass("D:\\проекты\\src\\main\\java\\ua\\orlov\\hw21\\ExtendSomeClass");
     }
     public static void pars(Class<?> clas){
       try {
