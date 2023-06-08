@@ -1,16 +1,20 @@
 package ua.orlov.hw21;
 
-
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import java.lang.reflect.Field;
 
 public class AllHW21 {
     public static void main(String[] args) throws Exception {
-//        A a = new A();
-//        Method privetA = A.class.getDeclaredMethod(A);
-//        privetA.setAccessible(true);
-//        A a = (A) constructor.newInstance("321");
-//        System.out.println(a);
-//        System.out.println();
+        Constructor<A> constructor = A.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        Class<? extends A> clas = A.class;
+        Field newId = clas.getDeclaredField("id");
+        Field newName = clas.getDeclaredField("name");
+        newId.setAccessible(true);
+        newId.set("id", "321");
+        newName.setAccessible(true);
+        newName.set("name" , "B");
+        System.out.println(newId.get("id"));
+        System.out.println(newName.get("name"));
     }
 }

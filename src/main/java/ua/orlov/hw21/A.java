@@ -18,26 +18,10 @@ return "A{" +
 }
 }*/
 public class A {
-    private String id = "123";
-    private String name = "A";
+    private  String id = "123";
+    private  String name = "A";
 
     private A() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
