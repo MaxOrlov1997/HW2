@@ -1,7 +1,6 @@
 package ua.orlov.hw17;
 
 import java.util.ArrayList;
-import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
