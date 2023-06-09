@@ -12,7 +12,7 @@ public class AllHW21 {
         Field newName = clas.getDeclaredField("name");
         newId.setAccessible(true);
         Object objConstructor = constructor.newInstance();
-        newId.set("id", objConstructor);
+        newId.set("id", objConstructor.getClass());
 //        newName.setAccessible(true);
 //        newName.set("name" , "B");
         System.out.println(newId.get("id"));
