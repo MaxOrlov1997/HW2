@@ -4,7 +4,7 @@ SELECT * FROM customer where country = 'Ukraine'
 
 SELECT * FROM customer where sex = 'male'
 
-
+UPDATE customer SET country = 'USA' WHERE YEAR(dateOfBirth) <2000
 
 Delete FROM customer WHERE country='Russia'
 
