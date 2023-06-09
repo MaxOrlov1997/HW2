@@ -13,8 +13,8 @@ public class AnnotationAnalyzer {
     static int valueTest;
     public static void main(String[] args) throws Exception {
        // pars(Value.class);
-        scanClass("D:\\проекты\\src\\main\\java\\ua\\orlov\\hw21\\SomeClass");
-        scanClass("D:\\проекты\\src\\main\\java\\ua\\orlov\\hw21\\ExtendSomeClass");
+        scanClass("SomeClass");
+       // scanClass("ExtendSomeClass");
     }
     public static void pars(Class<?> clas){
       try {

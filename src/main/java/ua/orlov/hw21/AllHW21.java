@@ -11,10 +11,11 @@ public class AllHW21 {
         Field newId = clas.getDeclaredField("id");
         Field newName = clas.getDeclaredField("name");
         newId.setAccessible(true);
-        newId.set("id", "321");
-        newName.setAccessible(true);
-        newName.set("name" , "B");
+        Object objConstructor = constructor.newInstance();
+        newId.set("id", objConstructor);
+//        newName.setAccessible(true);
+//        newName.set("name" , "B");
         System.out.println(newId.get("id"));
-        System.out.println(newName.get("name"));
+       // System.out.println(newName.get("name"));
     }
 }

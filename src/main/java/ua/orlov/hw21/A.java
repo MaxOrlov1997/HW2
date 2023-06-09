@@ -24,6 +24,14 @@ public class A {
     private A() {
     }
 
+    public String getId(String id) {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "A{" +
