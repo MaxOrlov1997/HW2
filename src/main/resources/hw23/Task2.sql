@@ -1,0 +1,7 @@
+CREATE TABLE Ustomer (login VARCHAR(50) NOT NULL ,
+	firstName VARCHAR(50)NOT NULL,
+	lastName VARCHAR(50)NOT NULL,
+	dateOfBirth DATE,
+	country VARCHAR(50)NOT NULL,
+	sex VARCHAR(50)NOT NULL
+)
